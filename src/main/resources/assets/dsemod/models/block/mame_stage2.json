@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "dsemod:blocks/mame_stage2"
+    }
+}

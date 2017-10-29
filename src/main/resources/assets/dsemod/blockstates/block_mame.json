@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "age=0": { "model": "dsemod:mame_stage0" },
+        "age=1": { "model": "dsemod:mame_stage1" },
+        "age=2": { "model": "dsemod:mame_stage2" },
+        "age=3": { "model": "dsemod:mame_stage2" },
+        "age=4": { "model": "dsemod:mame_stage2" },
+        "age=5": { "model": "dsemod:mame_stage3" },
+        "age=6": { "model": "dsemod:mame_stage3" },
+        "age=7": { "model": "dsemod:mame_stage4" }
+    }
+}

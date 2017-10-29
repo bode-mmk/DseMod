@@ -1,0 +1,20 @@
+{
+  "imas_records/ankirakyousoukyoku": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "dsemod:imas_records/ankirakyousoukyoku",
+        "stream": true
+      }
+    ]
+  },
+   "imas_records/sakuranokoro": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "dsemod:imas_records/sakuranokoro",
+        "stream": true
+      }
+    ]
+  }
+}
