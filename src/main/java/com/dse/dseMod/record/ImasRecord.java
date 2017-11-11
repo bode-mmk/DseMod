@@ -2,6 +2,7 @@ package com.dse.dseMod.record;
 
 import net.minecraft.block.BlockJukebox;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -13,7 +14,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -71,6 +71,6 @@ public class ImasRecord extends ItemRecord{
     @SideOnly(Side.CLIENT)
     public String getRecordNameLocal()
     {
-        return  I18n.translateToLocal(title_location)	;
+        return  I18n.format(title_location);
     }
 }

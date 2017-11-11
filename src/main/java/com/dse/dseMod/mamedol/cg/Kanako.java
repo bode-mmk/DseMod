@@ -2,7 +2,12 @@ package com.dse.dseMod.mamedol.cg;
 
 import com.dse.dseMod.mamedol.MamedolBase;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class Kanako extends MamedolBase{
 
@@ -10,12 +15,28 @@ public class Kanako extends MamedolBase{
 		super();
 		setUnlocalizedName("mamedol_cg_kanako");
 		setRegistryName("mamedol_cg_kanako");
+		this.setMaxDamage(2);
 	}
 
 	@Override
 	public ModelResourceLocation getModelResourceLocation() {
 		return new ModelResourceLocation("dsemod:mamedols/cg/kanako");
 	}
+
+    /**
+     * Called when a Block is destroyed using this Item. Return true to trigger the "Use Item" statistic.
+     */
+    public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving)
+    {
+        if (!worldIn.isRemote && (double)state.getBlockHardness(worldIn, pos) != 0.0D)
+        {
+           // stack.damageItem(1, entityLiving);
+            this.decreaseStamina(stack, 1);
+        }
+
+        return true;
+    }
+
 	/*
 	@Override
     public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
