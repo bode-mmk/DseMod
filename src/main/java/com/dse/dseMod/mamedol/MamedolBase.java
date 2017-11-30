@@ -17,8 +17,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 
 abstract public class MamedolBase extends Item {
-	protected int stamina = 20;
-
 	public MamedolBase() {
 		this.setCreativeTab(CreativeTabs.MISC);
 		this.setMaxStackSize(64);
@@ -33,7 +31,7 @@ abstract public class MamedolBase extends Item {
 			// デフォルト値
 			NBTTagCompound tag = new NBTTagCompound();
 			tag.setInteger("stamina", 20);
-			tag.setInteger("likability", 1);
+			tag.setInteger("likability", 0);
 			tag.setInteger("starrank", 1);
 			stack.setTagCompound(tag);
 		}
@@ -51,8 +49,51 @@ abstract public class MamedolBase extends Item {
     	}
     }
 
-    public void decreaseStamina(ItemStack stack, int value) {
-    	decreaseParameter(stack, "stamina", value);
+    public boolean decreaseStamina(ItemStack stack, int value) {
+    	return decreaseParameter(stack, "stamina", value);
+    }
+
+    public boolean increaseLikability(ItemStack stack,int value) {
+    	if(stack.hasTagCompound()) {
+    		NBTTagCompound tag = stack.getTagCompound();
+    		if(tag.hasKey("likability") && tag.hasKey("starrank")) {
+    			int likability = tag.getInteger("likability");
+    			likability += value;
+    			int limit_likability = 100 + 50 * (tag.getInteger("starrank") + 1);
+    			if(likability >= limit_likability) {
+    				likability = limit_likability;
+    			}
+    			tag.setInteger("likability", likability);
+    			return true;
+    		}
+    	}
+
+    	return false;
+    }
+
+    public int getParameter(ItemStack stack, String key) {
+    	if(stack.hasTagCompound()) {
+    		NBTTagCompound tag = stack.getTagCompound();
+    		if(tag.hasKey(key)) {
+    			return tag.getInteger(key);
+    		}
+    	}
+
+    	return -1;
+    }
+
+    public boolean setParameter(ItemStack stack, String key, int value) {
+    	if(stack.hasTagCompound()) {
+    		NBTTagCompound tag = stack.getTagCompound();
+    		if(tag.hasKey(key)){
+    			tag.setInteger(key,  value);
+    			return true;
+    		}else {
+    			return false;
+    		}
+    	}
+
+    	return false;
     }
 
     public boolean decreaseParameter(ItemStack stack, String key, int value) {
@@ -63,6 +104,7 @@ abstract public class MamedolBase extends Item {
     			parameter -= value;
     			if(parameter < 0) {
     				parameter = 0;
+    				return false;
     			}
     			tag.setInteger(key, parameter);
     			return true;
