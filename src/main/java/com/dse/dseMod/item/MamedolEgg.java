@@ -30,12 +30,14 @@ public class MamedolEgg extends ItemEgg{
     {
 		Item list[] =
 			{
+				DseMod.MAMEDOLS.as_azusa,
 				DseMod.MAMEDOLS.as_hibiki,
 				DseMod.MAMEDOLS.as_iori,
 				DseMod.MAMEDOLS.as_yayoi,
 				DseMod.MAMEDOLS.as_yukiho,
 
 				DseMod.MAMEDOLS.cg_anzu,
+				DseMod.MAMEDOLS.cg_ayame,
 				DseMod.MAMEDOLS.cg_chieri,
 				DseMod.MAMEDOLS.cg_kaede,
 				DseMod.MAMEDOLS.cg_kanako,
@@ -43,6 +45,7 @@ public class MamedolEgg extends ItemEgg{
 				DseMod.MAMEDOLS.cg_karin,
 				DseMod.MAMEDOLS.cg_kirari,
 				DseMod.MAMEDOLS.cg_lyla,
+				DseMod.MAMEDOLS.cg_miku,
 				DseMod.MAMEDOLS.cg_momoka,
 				DseMod.MAMEDOLS.cg_nanami,
 				DseMod.MAMEDOLS.cg_natsuki,
@@ -51,13 +54,20 @@ public class MamedolEgg extends ItemEgg{
 				DseMod.MAMEDOLS.cg_sae,
 				DseMod.MAMEDOLS.cg_syuko,
 				DseMod.MAMEDOLS.cg_takumi,
+				DseMod.MAMEDOLS.cg_tamami,
 				DseMod.MAMEDOLS.cg_yoshino,
 				DseMod.MAMEDOLS.cg_yuko,
 
+				DseMod.MAMEDOLS.ml_anna,
+				DseMod.MAMEDOLS.ml_arisa,
 				DseMod.MAMEDOLS.ml_emily,
 				DseMod.MAMEDOLS.ml_iku,
 				DseMod.MAMEDOLS.ml_kana,
-				DseMod.MAMEDOLS.ml_tomoka
+				DseMod.MAMEDOLS.ml_matsuri,
+				DseMod.MAMEDOLS.ml_momoko,
+				DseMod.MAMEDOLS.ml_serika,
+				DseMod.MAMEDOLS.ml_tomoka,
+				DseMod.MAMEDOLS.ml_yuriko
 			};
 
 		ItemStack itemstack = playerIn.getHeldItem(handIn);

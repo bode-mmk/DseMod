@@ -2,13 +2,13 @@
 {
   "modid": "DseMod",
   "name": "Dse Mod",
-  "description": "Do. su. e..",
+  "description": "Dosue",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["bode,anago,moririn"],
+  "credits": "bode_mmk, anagoP_ims, mementomori72",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

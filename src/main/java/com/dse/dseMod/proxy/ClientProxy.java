@@ -35,12 +35,14 @@ public class ClientProxy extends CommonProxy {
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
 		// mamedols resource set
+    	setMamedolResource(DseMod.MAMEDOLS.as_azusa);
     	setMamedolResource(DseMod.MAMEDOLS.as_hibiki);
     	setMamedolResource(DseMod.MAMEDOLS.as_iori);
 		setMamedolResource(DseMod.MAMEDOLS.as_yayoi);
 		setMamedolResource(DseMod.MAMEDOLS.as_yukiho);
 
 		setMamedolResource(DseMod.MAMEDOLS.cg_anzu);
+		setMamedolResource(DseMod.MAMEDOLS.cg_ayame);
 		setMamedolResource(DseMod.MAMEDOLS.cg_chieri);
 		setMamedolResource(DseMod.MAMEDOLS.cg_kaede);
 		setMamedolResource(DseMod.MAMEDOLS.cg_kanako);
@@ -48,6 +50,7 @@ public class ClientProxy extends CommonProxy {
 		setMamedolResource(DseMod.MAMEDOLS.cg_karin);
 		setMamedolResource(DseMod.MAMEDOLS.cg_kirari);
 		setMamedolResource(DseMod.MAMEDOLS.cg_lyla);
+		setMamedolResource(DseMod.MAMEDOLS.cg_miku);
 		setMamedolResource(DseMod.MAMEDOLS.cg_momoka);
 		setMamedolResource(DseMod.MAMEDOLS.cg_nanami);
 		setMamedolResource(DseMod.MAMEDOLS.cg_natsuki);
@@ -56,17 +59,25 @@ public class ClientProxy extends CommonProxy {
 		setMamedolResource(DseMod.MAMEDOLS.cg_sae);
 		setMamedolResource(DseMod.MAMEDOLS.cg_syuko);
 		setMamedolResource(DseMod.MAMEDOLS.cg_takumi);
+		setMamedolResource(DseMod.MAMEDOLS.cg_tamami);
 		setMamedolResource(DseMod.MAMEDOLS.cg_yoshino);
 		setMamedolResource(DseMod.MAMEDOLS.cg_yuko);
 
+		setMamedolResource(DseMod.MAMEDOLS.ml_anna);
+		setMamedolResource(DseMod.MAMEDOLS.ml_arisa);
 		setMamedolResource(DseMod.MAMEDOLS.ml_emily);
 		setMamedolResource(DseMod.MAMEDOLS.ml_iku);
 		setMamedolResource(DseMod.MAMEDOLS.ml_kana);
+		setMamedolResource(DseMod.MAMEDOLS.ml_matsuri);
+		setMamedolResource(DseMod.MAMEDOLS.ml_momoko);
+		setMamedolResource(DseMod.MAMEDOLS.ml_serika);
 		setMamedolResource(DseMod.MAMEDOLS.ml_tomoka);
+		setMamedolResource(DseMod.MAMEDOLS.ml_yuriko);
 
 		// items resouce set
 		ModelLoader.setCustomModelResourceLocation(DseMod.ITEMS.mamedol_egg, 0, new ModelResourceLocation("dsemod:mamedol_egg"));
 		ModelLoader.setCustomModelResourceLocation(DseMod.ITEMS.mamedol_seeds, 0, new ModelResourceLocation("dsemod:mamedol_seeds"));
+		ModelLoader.setCustomModelResourceLocation(DseMod.ITEMS.mamedol_seeds_irimame, 0, new ModelResourceLocation("dsemod:mamedol_seeds_irimame"));
 
 		ModelLoader.setCustomModelResourceLocation(DseMod.IMAS_RECORDS.ankirakyousoukyoku, 0, new ModelResourceLocation("dsemod:imas_records/ankirakyousoukyoku"));
 		ModelLoader.setCustomModelResourceLocation(DseMod.IMAS_RECORDS.sakuranokoro, 0, new ModelResourceLocation("dsemod:imas_records/sakuranokoro"));

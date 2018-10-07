@@ -1,15 +1,22 @@
 item.mamedol_seeds.name=まめ
+item.mamedol_seeds_irimame.name=炒り豆
 item.mamedol_egg.name=まめドルのたまご
 
 item.imas_record.ankirakyousoukyoku.desc=もりりん - あんきら狂想曲！？(GBアレンジ)
 item.imas_record.sakuranokoro.desc=もりりん - 桜の頃(GBアレンジ)
 
+item.mamedol.parameter.stamina=スタミナ
+item.mamedol.parameter.likability=親愛度
+item.mamedol.parameter.starrank=スターランク
+
+item.mamedol_as_azusa.name=あずさ
 item.mamedol_as_hibiki.name=ひびき
 item.mamedol_as_iori.name=いおり
 item.mamedol_as_yayoi.name=やよい
 item.mamedol_as_yukiho.name=ゆきほ
 
 item.mamedol_cg_anzu.name=あんず
+item.mamedol_cg_ayame.name=あやめ
 item.mamedol_cg_chieri.name=ちえり
 item.mamedol_cg_kaede.name=かえで
 item.mamedol_cg_kanako.name=かなこ
@@ -17,6 +24,7 @@ item.mamedol_cg_kaoru.name=かおる
 item.mamedol_cg_karin.name=かりん
 item.mamedol_cg_kirari.name=きらり
 item.mamedol_cg_lyla.name=らいら
+item.mamedol_cg_miku.name=みく
 item.mamedol_cg_momoka.name=ももか
 item.mamedol_cg_nanami.name=ななみ
 item.mamedol_cg_natsuki.name=なつき
@@ -25,10 +33,17 @@ item.mamedol_cg_sachiko.name=さちこ
 item.mamedol_cg_sae.name=さえ
 item.mamedol_cg_syuko.name=しゅうこ
 item.mamedol_cg_takumi.name=たくみ
+item.mamedol_cg_tamami.name=たまみ
 item.mamedol_cg_yoshino.name=よしの
 item.mamedol_cg_yuko.name=ゆうこ
 
+item.mamedol_ml_anna.name=あんな
+item.mamedol_ml_arisa.name=ありさ
 item.mamedol_ml_emily.name=えみりー
 item.mamedol_ml_iku.name=いく
 item.mamedol_ml_kana.name=かな
+item.mamedol_ml_matsuri.name=まつり
+item.mamedol_ml_momoko.name=ももこ
+item.mamedol_ml_serika.name=せりか
 item.mamedol_ml_tomoka.name=ともか
+item.mamedol_ml_yuriko.name=ゆりこ
