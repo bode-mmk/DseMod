@@ -32,7 +32,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @EventBusSubscriber
 public class DseMod {
 	public static final String  MODID = "dsemod";
-	public static final String  VERSION = "0.2.0.1";
+	public static final String  VERSION = "0.2.0.2";
 
 	// mamedol holder
 	public static class MAMEDOLS {
