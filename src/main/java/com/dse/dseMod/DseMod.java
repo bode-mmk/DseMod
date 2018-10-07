@@ -1,6 +1,7 @@
 package com.dse.dseMod;
 
 import com.dse.dseMod.block.BlockMame;
+import com.dse.dseMod.item.Dsecart;
 import com.dse.dseMod.item.MamedolEgg;
 import com.dse.dseMod.item.MamedolSeeds;
 import com.dse.dseMod.item.MamedolSeedsIrimame;
@@ -10,6 +11,7 @@ import com.dse.dseMod.record.ImasRecord;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -79,6 +81,12 @@ public class DseMod {
 
 	// item holder
 	public static class ITEMS{
+		public static Item dsecart = new Dsecart(
+				EntityMinecart.Type.RIDEABLE
+				)
+				.setUnlocalizedName("dsecart")
+				.setRegistryName("dsecart");
+
 		public static Item mamedol_seeds = new MamedolSeeds(
 				1, 0.3F,DseMod.BLOCKS.mame, DseMod.BLOCKS.mame )
 				.setUnlocalizedName("mamedol_seeds")
@@ -176,6 +184,7 @@ public class DseMod {
 				MAMEDOLS.ml_tomoka,
 				MAMEDOLS.ml_yuriko,
 
+				ITEMS.dsecart,
 				ITEMS.mamedol_egg,
 				ITEMS.mamedol_seeds,
 				ITEMS.mamedol_seeds_irimame,

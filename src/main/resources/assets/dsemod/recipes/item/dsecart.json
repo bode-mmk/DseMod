@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "x x",
+        "xxx"
+    ],
+    "key":
+    {
+        "x":
+        {
+            "item": "minecraft:iron_block",
+            "data": 0
+        }
+    },
+    "result":
+    {
+        "item": "dsemod:dsecart",
+        "count": 1,
+        "data": 0
+    }
+}
