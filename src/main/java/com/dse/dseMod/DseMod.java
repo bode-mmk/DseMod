@@ -32,12 +32,13 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @EventBusSubscriber
 public class DseMod {
 	public static final String  MODID = "dsemod";
-	public static final String  VERSION = "0.2.0.1";
+	public static final String  VERSION = "0.2.0.2";
 
 	// mamedol holder
 	public static class MAMEDOLS {
 		// AS
 		public static Item as_azusa = new com.dse.dseMod.mamedol.as.Azusa();
+		public static Item as_chihaya = new com.dse.dseMod.mamedol.as.Chihaya();
 		public static Item as_hibiki = new com.dse.dseMod.mamedol.as.Hibiki();
 		public static Item as_iori = new com.dse.dseMod.mamedol.as.Iori();
 		public static Item as_yayoi = new com.dse.dseMod.mamedol.as.Yayoi();
@@ -47,6 +48,8 @@ public class DseMod {
 		public static Item cg_anzu = new com.dse.dseMod.mamedol.cg.Anzu();
 		public static Item cg_ayame = new com.dse.dseMod.mamedol.cg.Ayame();
 		public static Item cg_chieri = new com.dse.dseMod.mamedol.cg.Chieri();
+		public static Item cg_clarice = new com.dse.dseMod.mamedol.cg.Clarice();
+		public static Item cg_emi = new com.dse.dseMod.mamedol.cg.Emi();
 		public static Item cg_kaede = new com.dse.dseMod.mamedol.cg.Kaede();
 		public static Item cg_kanako = new com.dse.dseMod.mamedol.cg.Kanako();
 		public static Item cg_kaoru = new com.dse.dseMod.mamedol.cg.Kaoru();
@@ -74,6 +77,7 @@ public class DseMod {
 		public static Item ml_kana = new com.dse.dseMod.mamedol.ml.Kana();
 		public static Item ml_matsuri = new com.dse.dseMod.mamedol.ml.Matsuri();
 		public static Item ml_momoko = new com.dse.dseMod.mamedol.ml.Momoko();
+		public static Item ml_nao = new com.dse.dseMod.mamedol.ml.Nao();
 		public static Item ml_serika = new com.dse.dseMod.mamedol.ml.Serika();
 		public static Item ml_tomoka = new com.dse.dseMod.mamedol.ml.Tomoka();
 		public static Item ml_yuriko = new com.dse.dseMod.mamedol.ml.Yuriko();
@@ -146,6 +150,7 @@ public class DseMod {
 	protected static void registerItems(RegistryEvent.Register<Item> event){
 		event.getRegistry().registerAll(
 				MAMEDOLS.as_azusa,
+				MAMEDOLS.as_chihaya,
 				MAMEDOLS.as_hibiki,
 				MAMEDOLS.as_iori,
 				MAMEDOLS.as_yayoi,
@@ -154,6 +159,8 @@ public class DseMod {
 				MAMEDOLS.cg_anzu,
 				MAMEDOLS.cg_ayame,
 				MAMEDOLS.cg_chieri,
+				MAMEDOLS.cg_clarice,
+				MAMEDOLS.cg_emi,
 				MAMEDOLS.cg_kaede,
 				MAMEDOLS.cg_kanako,
 				MAMEDOLS.cg_kaoru,
@@ -180,6 +187,7 @@ public class DseMod {
 				MAMEDOLS.ml_kana,
 				MAMEDOLS.ml_matsuri,
 				MAMEDOLS.ml_momoko,
+				MAMEDOLS.ml_nao,
 				MAMEDOLS.ml_serika,
 				MAMEDOLS.ml_tomoka,
 				MAMEDOLS.ml_yuriko,

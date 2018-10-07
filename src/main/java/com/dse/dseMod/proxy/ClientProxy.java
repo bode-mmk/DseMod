@@ -36,6 +36,7 @@ public class ClientProxy extends CommonProxy {
     public static void registerModels(ModelRegistryEvent event) {
 		// mamedols resource set
     	setMamedolResource(DseMod.MAMEDOLS.as_azusa);
+    	setMamedolResource(DseMod.MAMEDOLS.as_chihaya);
     	setMamedolResource(DseMod.MAMEDOLS.as_hibiki);
     	setMamedolResource(DseMod.MAMEDOLS.as_iori);
 		setMamedolResource(DseMod.MAMEDOLS.as_yayoi);
@@ -44,6 +45,8 @@ public class ClientProxy extends CommonProxy {
 		setMamedolResource(DseMod.MAMEDOLS.cg_anzu);
 		setMamedolResource(DseMod.MAMEDOLS.cg_ayame);
 		setMamedolResource(DseMod.MAMEDOLS.cg_chieri);
+		setMamedolResource(DseMod.MAMEDOLS.cg_clarice);
+		setMamedolResource(DseMod.MAMEDOLS.cg_emi);
 		setMamedolResource(DseMod.MAMEDOLS.cg_kaede);
 		setMamedolResource(DseMod.MAMEDOLS.cg_kanako);
 		setMamedolResource(DseMod.MAMEDOLS.cg_kaoru);
@@ -70,6 +73,7 @@ public class ClientProxy extends CommonProxy {
 		setMamedolResource(DseMod.MAMEDOLS.ml_kana);
 		setMamedolResource(DseMod.MAMEDOLS.ml_matsuri);
 		setMamedolResource(DseMod.MAMEDOLS.ml_momoko);
+		setMamedolResource(DseMod.MAMEDOLS.ml_nao);
 		setMamedolResource(DseMod.MAMEDOLS.ml_serika);
 		setMamedolResource(DseMod.MAMEDOLS.ml_tomoka);
 		setMamedolResource(DseMod.MAMEDOLS.ml_yuriko);
