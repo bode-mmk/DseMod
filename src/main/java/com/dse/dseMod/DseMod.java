@@ -72,6 +72,7 @@ public class DseMod {
 		public static Item ml_momoko = new com.dse.dseMod.mamedol.ml.Momoko();
 		public static Item ml_serika = new com.dse.dseMod.mamedol.ml.Serika();
 		public static Item ml_tomoka = new com.dse.dseMod.mamedol.ml.Tomoka();
+		public static Item ml_yuriko = new com.dse.dseMod.mamedol.ml.Yuriko();
 	}
 
 	// item holder
@@ -165,6 +166,7 @@ public class DseMod {
 				MAMEDOLS.ml_momoko,
 				MAMEDOLS.ml_serika,
 				MAMEDOLS.ml_tomoka,
+				MAMEDOLS.ml_yuriko,
 
 				ITEMS.mamedol_egg,
 				ITEMS.mamedol_seeds,
