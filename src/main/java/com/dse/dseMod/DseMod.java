@@ -3,6 +3,7 @@ package com.dse.dseMod;
 import com.dse.dseMod.block.BlockMame;
 import com.dse.dseMod.item.MamedolEgg;
 import com.dse.dseMod.item.MamedolSeeds;
+import com.dse.dseMod.item.MamedolSeedsIrimame;
 import com.dse.dseMod.potion.PotionHannari;
 import com.dse.dseMod.proxy.CommonProxy;
 import com.dse.dseMod.record.ImasRecord;
@@ -23,6 +24,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = DseMod.MODID, version = DseMod.VERSION)
 @EventBusSubscriber
@@ -81,6 +83,12 @@ public class DseMod {
 				1, 0.3F,DseMod.BLOCKS.mame, DseMod.BLOCKS.mame )
 				.setUnlocalizedName("mamedol_seeds")
 				.setRegistryName("mamedol_seeds");
+
+		public static Item mamedol_seeds_irimame = new MamedolSeedsIrimame(
+				2, 0.31F, DseMod.BLOCKS.mame, null )
+				.setCreativeTab(CreativeTabs.FOOD)
+				.setUnlocalizedName("mamedol_seeds_irimame")
+				.setRegistryName("mamedol_seeds_irimame");
 
 		public static Item mamedol_egg =  new MamedolEgg()
 				.setCreativeTab(CreativeTabs.FOOD)
@@ -170,6 +178,7 @@ public class DseMod {
 
 				ITEMS.mamedol_egg,
 				ITEMS.mamedol_seeds,
+				ITEMS.mamedol_seeds_irimame,
 
 				IMAS_RECORDS.ankirakyousoukyoku,
 				IMAS_RECORDS.sakuranokoro
@@ -194,6 +203,7 @@ public class DseMod {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ForgeRegistries.POTIONS.register(POTIONS.hannari);
+		GameRegistry.addSmelting(ITEMS.mamedol_seeds, new ItemStack(ITEMS.mamedol_seeds_irimame), 0.1f);
 		proxy.preInit(event);
 	}
 
