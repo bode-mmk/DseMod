@@ -38,6 +38,7 @@ public class DseMod {
 	public static class MAMEDOLS {
 		// AS
 		public static Item as_azusa = new com.dse.dseMod.mamedol.as.Azusa();
+		public static Item as_chihaya = new com.dse.dseMod.mamedol.as.Chihaya();
 		public static Item as_hibiki = new com.dse.dseMod.mamedol.as.Hibiki();
 		public static Item as_iori = new com.dse.dseMod.mamedol.as.Iori();
 		public static Item as_yayoi = new com.dse.dseMod.mamedol.as.Yayoi();
@@ -148,6 +149,7 @@ public class DseMod {
 	protected static void registerItems(RegistryEvent.Register<Item> event){
 		event.getRegistry().registerAll(
 				MAMEDOLS.as_azusa,
+				MAMEDOLS.as_chihaya,
 				MAMEDOLS.as_hibiki,
 				MAMEDOLS.as_iori,
 				MAMEDOLS.as_yayoi,

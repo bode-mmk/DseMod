@@ -36,6 +36,7 @@ public class ClientProxy extends CommonProxy {
     public static void registerModels(ModelRegistryEvent event) {
 		// mamedols resource set
     	setMamedolResource(DseMod.MAMEDOLS.as_azusa);
+    	setMamedolResource(DseMod.MAMEDOLS.as_chihaya);
     	setMamedolResource(DseMod.MAMEDOLS.as_hibiki);
     	setMamedolResource(DseMod.MAMEDOLS.as_iori);
 		setMamedolResource(DseMod.MAMEDOLS.as_yayoi);
