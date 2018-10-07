@@ -47,6 +47,7 @@ public class DseMod {
 		public static Item cg_anzu = new com.dse.dseMod.mamedol.cg.Anzu();
 		public static Item cg_ayame = new com.dse.dseMod.mamedol.cg.Ayame();
 		public static Item cg_chieri = new com.dse.dseMod.mamedol.cg.Chieri();
+		public static Item cg_emi = new com.dse.dseMod.mamedol.cg.Emi();
 		public static Item cg_kaede = new com.dse.dseMod.mamedol.cg.Kaede();
 		public static Item cg_kanako = new com.dse.dseMod.mamedol.cg.Kanako();
 		public static Item cg_kaoru = new com.dse.dseMod.mamedol.cg.Kaoru();
@@ -154,6 +155,7 @@ public class DseMod {
 				MAMEDOLS.cg_anzu,
 				MAMEDOLS.cg_ayame,
 				MAMEDOLS.cg_chieri,
+				MAMEDOLS.cg_emi,
 				MAMEDOLS.cg_kaede,
 				MAMEDOLS.cg_kanako,
 				MAMEDOLS.cg_kaoru,
