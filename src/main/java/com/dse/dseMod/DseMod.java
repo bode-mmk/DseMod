@@ -61,6 +61,7 @@ public class DseMod {
 		public static Item cg_yuko = new com.dse.dseMod.mamedol.cg.Yuko();
 
 		// ML
+		public static Item ml_anna = new com.dse.dseMod.mamedol.ml.Anna();
 		public static Item ml_arisa = new com.dse.dseMod.mamedol.ml.Arisa();
 		public static Item ml_emily = new com.dse.dseMod.mamedol.ml.Emily();
 		public static Item ml_iku = new com.dse.dseMod.mamedol.ml.Iku();
@@ -148,6 +149,7 @@ public class DseMod {
 				MAMEDOLS.cg_yoshino,
 				MAMEDOLS.cg_yuko,
 
+				MAMEDOLS.ml_anna,
 				MAMEDOLS.ml_arisa,
 				MAMEDOLS.ml_emily,
 				MAMEDOLS.ml_iku,
