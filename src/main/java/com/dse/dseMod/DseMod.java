@@ -28,11 +28,12 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 @EventBusSubscriber
 public class DseMod {
 	public static final String  MODID = "dsemod";
-	public static final String  VERSION = "0.2.0.0";
+	public static final String  VERSION = "0.2.0.1";
 
 	// mamedol holder
 	public static class MAMEDOLS {
 		// AS
+		public static Item as_azusa = new com.dse.dseMod.mamedol.as.Azusa();
 		public static Item as_hibiki = new com.dse.dseMod.mamedol.as.Hibiki();
 		public static Item as_iori = new com.dse.dseMod.mamedol.as.Iori();
 		public static Item as_yayoi = new com.dse.dseMod.mamedol.as.Yayoi();
@@ -119,6 +120,7 @@ public class DseMod {
 	@SubscribeEvent
 	protected static void registerItems(RegistryEvent.Register<Item> event){
 		event.getRegistry().registerAll(
+				MAMEDOLS.as_azusa,
 				MAMEDOLS.as_hibiki,
 				MAMEDOLS.as_iori,
 				MAMEDOLS.as_yayoi,

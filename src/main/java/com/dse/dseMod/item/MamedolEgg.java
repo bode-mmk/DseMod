@@ -30,6 +30,7 @@ public class MamedolEgg extends ItemEgg{
     {
 		Item list[] =
 			{
+				DseMod.MAMEDOLS.as_azusa,
 				DseMod.MAMEDOLS.as_hibiki,
 				DseMod.MAMEDOLS.as_iori,
 				DseMod.MAMEDOLS.as_yayoi,
