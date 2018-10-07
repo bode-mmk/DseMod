@@ -42,6 +42,7 @@ public class ClientProxy extends CommonProxy {
 		setMamedolResource(DseMod.MAMEDOLS.as_yukiho);
 
 		setMamedolResource(DseMod.MAMEDOLS.cg_anzu);
+		setMamedolResource(DseMod.MAMEDOLS.cg_ayame);
 		setMamedolResource(DseMod.MAMEDOLS.cg_chieri);
 		setMamedolResource(DseMod.MAMEDOLS.cg_kaede);
 		setMamedolResource(DseMod.MAMEDOLS.cg_kanako);

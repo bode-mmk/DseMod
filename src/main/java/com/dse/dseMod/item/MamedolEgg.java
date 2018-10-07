@@ -37,6 +37,7 @@ public class MamedolEgg extends ItemEgg{
 				DseMod.MAMEDOLS.as_yukiho,
 
 				DseMod.MAMEDOLS.cg_anzu,
+				DseMod.MAMEDOLS.cg_ayame,
 				DseMod.MAMEDOLS.cg_chieri,
 				DseMod.MAMEDOLS.cg_kaede,
 				DseMod.MAMEDOLS.cg_kanako,
