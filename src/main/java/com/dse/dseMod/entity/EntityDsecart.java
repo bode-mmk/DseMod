@@ -183,9 +183,9 @@ public class EntityDsecart extends EntityMinecart {
             }
             else
             {
-                this.motionX *= 0.5D;
+                this.motionX *= 0.78D;
                 this.motionY *= 0.0D;
-                this.motionZ *= 0.5D;
+                this.motionZ *= 0.78D;
             }
         }
 
