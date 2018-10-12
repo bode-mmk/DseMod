@@ -1,6 +1,7 @@
 package com.dse.dseMod;
 
 import com.dse.dseMod.block.BlockMame;
+import com.dse.dseMod.block.BlockRailDse;
 import com.dse.dseMod.item.Dsecart;
 import com.dse.dseMod.item.MamedolEgg;
 import com.dse.dseMod.item.MamedolSeeds;
@@ -113,6 +114,9 @@ public class DseMod {
 		public static Block mame = new BlockMame()
 				.setUnlocalizedName("block_mame")
 				.setRegistryName("block_mame");
+		public static Block rail_dse = new BlockRailDse()
+				.setUnlocalizedName("rail_dse")
+				.setRegistryName("rail_dse");
 	}
 
 	// sound event holder
@@ -205,7 +209,8 @@ public class DseMod {
 	@SubscribeEvent
 	protected static void registerBlocks(RegistryEvent.Register<Block> event) {
 		event.getRegistry().registerAll(
-				BLOCKS.mame
+				BLOCKS.mame,
+				BLOCKS.rail_dse
 				);
 	}
 
