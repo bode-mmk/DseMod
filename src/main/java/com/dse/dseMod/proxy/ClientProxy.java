@@ -32,6 +32,10 @@ public class ClientProxy extends CommonProxy {
 		ModelLoader.setCustomModelResourceLocation(mamedol, 0, ((MamedolBase)mamedol).getModelResourceLocation());
 	}
 
+	private static void setBlockResource(Item item) {
+		ModelLoader.setCustomModelResourceLocation(item,  0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+	}
+
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
 		// mamedols resource set
@@ -87,5 +91,7 @@ public class ClientProxy extends CommonProxy {
 		ModelLoader.setCustomModelResourceLocation(DseMod.IMAS_RECORDS.ankirakyousoukyoku, 0, new ModelResourceLocation("dsemod:imas_records/ankirakyousoukyoku"));
 		ModelLoader.setCustomModelResourceLocation(DseMod.IMAS_RECORDS.sakuranokoro, 0, new ModelResourceLocation("dsemod:imas_records/sakuranokoro"));
 
+		// block to item
+		setBlockResource(Item.getItemFromBlock(DseMod.BLOCKS.rail_dse));
     }
 }

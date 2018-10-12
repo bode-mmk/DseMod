@@ -1,6 +1,7 @@
 package com.dse.dseMod;
 
 import com.dse.dseMod.block.BlockMame;
+import com.dse.dseMod.block.BlockRailDse;
 import com.dse.dseMod.item.Dsecart;
 import com.dse.dseMod.item.MamedolEgg;
 import com.dse.dseMod.item.MamedolSeeds;
@@ -13,6 +14,7 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
@@ -32,7 +34,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @EventBusSubscriber
 public class DseMod {
 	public static final String  MODID = "dsemod";
-	public static final String  VERSION = "0.2.0.3";
+	public static final String  VERSION = "0.2.0.4";
 
 	// mamedol holder
 	public static class MAMEDOLS {
@@ -113,6 +115,10 @@ public class DseMod {
 		public static Block mame = new BlockMame()
 				.setUnlocalizedName("block_mame")
 				.setRegistryName("block_mame");
+		public static Block rail_dse = new BlockRailDse()
+				.setCreativeTab(CreativeTabs.TRANSPORTATION)
+				.setUnlocalizedName("rail_dse")
+				.setRegistryName("rail_dse");
 	}
 
 	// sound event holder
@@ -198,14 +204,18 @@ public class DseMod {
 				ITEMS.mamedol_seeds_irimame,
 
 				IMAS_RECORDS.ankirakyousoukyoku,
-				IMAS_RECORDS.sakuranokoro
+				IMAS_RECORDS.sakuranokoro,
+
+				// itemとしてのブロックを登録
+				new ItemBlock(BLOCKS.rail_dse).setRegistryName(BLOCKS.rail_dse.getRegistryName())
 				);
 	}
 
 	@SubscribeEvent
 	protected static void registerBlocks(RegistryEvent.Register<Block> event) {
 		event.getRegistry().registerAll(
-				BLOCKS.mame
+				BLOCKS.mame,
+				BLOCKS.rail_dse
 				);
 	}
 
