@@ -14,6 +14,7 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
@@ -115,6 +116,7 @@ public class DseMod {
 				.setUnlocalizedName("block_mame")
 				.setRegistryName("block_mame");
 		public static Block rail_dse = new BlockRailDse()
+				.setCreativeTab(CreativeTabs.REDSTONE)
 				.setUnlocalizedName("rail_dse")
 				.setRegistryName("rail_dse");
 	}
@@ -202,7 +204,10 @@ public class DseMod {
 				ITEMS.mamedol_seeds_irimame,
 
 				IMAS_RECORDS.ankirakyousoukyoku,
-				IMAS_RECORDS.sakuranokoro
+				IMAS_RECORDS.sakuranokoro,
+
+				// itemとしてのブロックを登録
+				new ItemBlock(BLOCKS.rail_dse).setRegistryName(BLOCKS.rail_dse.getRegistryName())
 				);
 	}
 
