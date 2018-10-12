@@ -99,12 +99,20 @@ public class EntityDsecart extends EntityMinecart {
         this.posY = (double)pos.getY();
         boolean flag = false;
         boolean flag1 = false;
+        boolean is_dse_active_flag = false;
+        boolean is_dse_no_active_flag = false;
         BlockRailBase blockrailbase = (BlockRailBase)state.getBlock();
 
         if (blockrailbase == Blocks.GOLDEN_RAIL)
         {
             flag = ((Boolean)state.getValue(BlockRailPowered.POWERED)).booleanValue();
             flag1 = !flag;
+        }
+
+        // どすえれーるの時のフラグを見る
+        if(blockrailbase == DseMod.BLOCKS.rail_dse) {
+        	is_dse_active_flag = ((Boolean)state.getValue(BlockRailPowered.POWERED)).booleanValue();
+        	is_dse_no_active_flag = !is_dse_active_flag;
         }
 
         double slopeAdjustment = getSlopeAdjustment();
@@ -177,16 +185,32 @@ public class EntityDsecart extends EntityMinecart {
 
             if (d17 < 0.03D)
             {
-                this.motionX *= 0.0D;
-                this.motionY *= 0.0D;
-                this.motionZ *= 0.0D;
+            	this.motionX *= 0.0D;
+            	this.motionY *= 0.0D;
+            	this.motionZ *= 0.0D;
             }
             else
             {
-                this.motionX *= 0.78D;
-                this.motionY *= 0.0D;
-                this.motionZ *= 0.78D;
+            	this.motionX *= 0.78D;
+            	this.motionY *= 0.0D;
+            	this.motionZ *= 0.78D;
             }
+        }
+
+        if(is_dse_no_active_flag && shouldDoRailFunctions()) {
+           	// 通常のスピード以下ならそのまま緩やかに減速
+        	double dd_speed_vector = Math.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ);
+        	// sqrt(0.4^2 + 0.4^2) ≒ 0.56D
+        	if(dd_speed_vector < 0.56D) {
+        		this.motionX *= 0.98D;
+        		this.motionY *= 0.0D;
+        		this.motionZ *= 0.98D;
+        	}else {
+        		// それ以上は急激に減速
+        		this.motionX *= 0.8D;
+        		this.motionY *= 0.0D;
+        		this.motionZ *= 0.8D;
+        	}
         }
 
         double d18 = (double)pos.getX() + 0.5D + (double)aint[0][0] * 0.5D;
@@ -261,15 +285,20 @@ public class EntityDsecart extends EntityMinecart {
             ((BlockRailBase)state.getBlock()).onMinecartPass(world, this, pos);
         }
 
-        if (flag && shouldDoRailFunctions())
+        if ((flag && shouldDoRailFunctions()) || (is_dse_active_flag && shouldDoRailFunctions()))
         {
             double d15 = Math.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ);
 
             if (d15 > 0.01D)
             {
                 double d16 = 0.06D;
-                this.motionX += this.motionX / d15 * 0.06D;
-                this.motionZ += this.motionZ / d15 * 0.06D;
+
+                // dse railの場合は3倍
+                if(is_dse_active_flag) {
+                	d16 = 0.18D;
+                }
+                this.motionX += this.motionX / d15 * d16;
+                this.motionZ += this.motionZ / d15 * d16;
             }
             else if (blockrailbase$enumraildirection == BlockRailBase.EnumRailDirection.EAST_WEST)
             {
