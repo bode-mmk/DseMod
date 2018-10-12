@@ -116,7 +116,7 @@ public class DseMod {
 				.setUnlocalizedName("block_mame")
 				.setRegistryName("block_mame");
 		public static Block rail_dse = new BlockRailDse()
-				.setCreativeTab(CreativeTabs.REDSTONE)
+				.setCreativeTab(CreativeTabs.TRANSPORTATION)
 				.setUnlocalizedName("rail_dse")
 				.setRegistryName("rail_dse");
 	}
