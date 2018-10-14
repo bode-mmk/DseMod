@@ -1,5 +1,6 @@
 package com.dse.dseMod;
 
+import com.dse.dseMod.block.BlockFlowerCosmos;
 import com.dse.dseMod.block.BlockMame;
 import com.dse.dseMod.block.BlockRailDse;
 import com.dse.dseMod.item.Dsecart;
@@ -119,6 +120,17 @@ public class DseMod {
 				.setCreativeTab(CreativeTabs.TRANSPORTATION)
 				.setUnlocalizedName("rail_dse")
 				.setRegistryName("rail_dse");
+		public static Block flower_cosmos = new BlockFlowerCosmos()
+				.setCreativeTab(CreativeTabs.DECORATIONS)
+				.setUnlocalizedName("flower_cosmos")
+				.setRegistryName("flower_cosmos");
+	}
+
+	public static class BLOCK_ITEMS{
+		public static Item rail_dse_tile_item = new ItemBlock(BLOCKS.rail_dse)
+				.setRegistryName(BLOCKS.rail_dse.getRegistryName());
+		public static Item flower_cosmos_tile_item = new ItemBlock(BLOCKS.flower_cosmos)
+				.setRegistryName(BLOCKS.flower_cosmos.getRegistryName());
 	}
 
 	// sound event holder
@@ -207,7 +219,8 @@ public class DseMod {
 				IMAS_RECORDS.sakuranokoro,
 
 				// itemとしてのブロックを登録
-				new ItemBlock(BLOCKS.rail_dse).setRegistryName(BLOCKS.rail_dse.getRegistryName())
+				BLOCK_ITEMS.rail_dse_tile_item,
+				BLOCK_ITEMS.flower_cosmos_tile_item
 				);
 	}
 
@@ -215,7 +228,8 @@ public class DseMod {
 	protected static void registerBlocks(RegistryEvent.Register<Block> event) {
 		event.getRegistry().registerAll(
 				BLOCKS.mame,
-				BLOCKS.rail_dse
+				BLOCKS.rail_dse,
+				BLOCKS.flower_cosmos
 				);
 	}
 
