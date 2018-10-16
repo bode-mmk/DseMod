@@ -54,7 +54,7 @@ public class BlockFlowerMyosotis extends BlockCrops {
 
 	@Override
 	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, net.minecraft.world.IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-		drops.add(new ItemStack(DseMod.BLOCK_ITEMS.flower_cosmos_tile_item, 1, 0));
+		drops.add(new ItemStack(DseMod.BLOCK_ITEMS.flower_myosotis_tile_item, 1, 0));
 	}
 
 }
