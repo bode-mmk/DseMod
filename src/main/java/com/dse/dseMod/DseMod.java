@@ -2,6 +2,7 @@ package com.dse.dseMod;
 
 import com.dse.dseMod.block.BlockFlowerCosmos;
 import com.dse.dseMod.block.BlockFlowerDianthus;
+import com.dse.dseMod.block.BlockFlowerLycoris;
 import com.dse.dseMod.block.BlockFlowerMyosotis;
 import com.dse.dseMod.block.BlockMame;
 import com.dse.dseMod.block.BlockRailDse;
@@ -134,6 +135,10 @@ public class DseMod {
 				.setCreativeTab(CreativeTabs.DECORATIONS)
 				.setUnlocalizedName("flower_dianthus")
 				.setRegistryName("flower_dianthus");
+		public static Block flower_lycoris = new BlockFlowerLycoris()
+				.setCreativeTab(CreativeTabs.DECORATIONS)
+				.setUnlocalizedName("flower_lycoris")
+				.setRegistryName("flower_lycoris");
 	}
 
 	public static class BLOCK_ITEMS{
@@ -145,6 +150,8 @@ public class DseMod {
 				.setRegistryName(BLOCKS.flower_myosotis.getRegistryName());
 		public static Item flower_dianthus_tile_item = new ItemBlock(BLOCKS.flower_dianthus)
 				.setRegistryName(BLOCKS.flower_dianthus.getRegistryName());
+		public static Item flower_lycoris_tile_item = new ItemBlock(BLOCKS.flower_lycoris)
+				.setRegistryName(BLOCKS.flower_lycoris.getRegistryName());
 	}
 
 	// sound event holder
@@ -236,7 +243,8 @@ public class DseMod {
 				BLOCK_ITEMS.rail_dse_tile_item,
 				BLOCK_ITEMS.flower_cosmos_tile_item,
 				BLOCK_ITEMS.flower_myosotis_tile_item,
-				BLOCK_ITEMS.flower_dianthus_tile_item
+				BLOCK_ITEMS.flower_dianthus_tile_item,
+				BLOCK_ITEMS.flower_lycoris_tile_item
 				);
 	}
 
@@ -247,7 +255,8 @@ public class DseMod {
 				BLOCKS.rail_dse,
 				BLOCKS.flower_cosmos,
 				BLOCKS.flower_myosotis,
-				BLOCKS.flower_dianthus
+				BLOCKS.flower_dianthus,
+				BLOCKS.flower_lycoris
 				);
 	}
 

@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "dsemod:blocks/flower_lycoris"
+    }
+}
