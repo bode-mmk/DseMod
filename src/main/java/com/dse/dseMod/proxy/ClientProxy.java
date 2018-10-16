@@ -95,5 +95,6 @@ public class ClientProxy extends CommonProxy {
 		setBlockResource(Item.getItemFromBlock(DseMod.BLOCKS.rail_dse));
 		setBlockResource(Item.getItemFromBlock(DseMod.BLOCKS.flower_cosmos));
 		setBlockResource(Item.getItemFromBlock(DseMod.BLOCKS.flower_myosotis));
+		setBlockResource(Item.getItemFromBlock(DseMod.BLOCKS.flower_dianthus));
     }
 }

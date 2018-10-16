@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "age=0": { "model": "dsemod:flower_dianthus" },
+        "age=1": { "model": "dsemod:flower_dianthus" }
+    }
+}
