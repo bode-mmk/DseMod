@@ -1,5 +1,10 @@
 package com.dse.dseMod;
 
+import com.dse.dseMod.block.BlockFlowerCosmos;
+import com.dse.dseMod.block.BlockFlowerDianthus;
+import com.dse.dseMod.block.BlockFlowerGentiana;
+import com.dse.dseMod.block.BlockFlowerLycoris;
+import com.dse.dseMod.block.BlockFlowerMyosotis;
 import com.dse.dseMod.block.BlockMame;
 import com.dse.dseMod.block.BlockRailDse;
 import com.dse.dseMod.item.Dsecart;
@@ -35,6 +40,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class DseMod {
 	public static final String  MODID = "dsemod";
 	public static final String  VERSION = "0.2.0.4";
+	// world generator holder
+	//public static class WORLD_GEN {
+	//	public static IWorldGenerator dse_flower_generator = new com.dse.dseMod.worldgen.WorldGenDseFlower();
+	//}
 
 	// mamedol holder
 	public static class MAMEDOLS {
@@ -119,6 +128,41 @@ public class DseMod {
 				.setCreativeTab(CreativeTabs.TRANSPORTATION)
 				.setUnlocalizedName("rail_dse")
 				.setRegistryName("rail_dse");
+		public static Block flower_cosmos = new BlockFlowerCosmos()
+				.setCreativeTab(CreativeTabs.DECORATIONS)
+				.setUnlocalizedName("flower_cosmos")
+				.setRegistryName("flower_cosmos");
+		public static Block flower_myosotis = new BlockFlowerMyosotis()
+				.setCreativeTab(CreativeTabs.DECORATIONS)
+				.setUnlocalizedName("flower_myosotis")
+				.setRegistryName("flower_myosotis");
+		public static Block flower_dianthus = new BlockFlowerDianthus()
+				.setCreativeTab(CreativeTabs.DECORATIONS)
+				.setUnlocalizedName("flower_dianthus")
+				.setRegistryName("flower_dianthus");
+		public static Block flower_lycoris = new BlockFlowerLycoris()
+				.setCreativeTab(CreativeTabs.DECORATIONS)
+				.setUnlocalizedName("flower_lycoris")
+				.setRegistryName("flower_lycoris");
+		public static Block flower_gentiana = new BlockFlowerGentiana()
+				.setCreativeTab(CreativeTabs.DECORATIONS)
+				.setUnlocalizedName("flower_gentiana")
+				.setRegistryName("flower_gentiana");
+	}
+
+	public static class BLOCK_ITEMS{
+		public static Item rail_dse_tile_item = new ItemBlock(BLOCKS.rail_dse)
+				.setRegistryName(BLOCKS.rail_dse.getRegistryName());
+		public static Item flower_cosmos_tile_item = new ItemBlock(BLOCKS.flower_cosmos)
+				.setRegistryName(BLOCKS.flower_cosmos.getRegistryName());
+		public static Item flower_myosotis_tile_item = new ItemBlock(BLOCKS.flower_myosotis)
+				.setRegistryName(BLOCKS.flower_myosotis.getRegistryName());
+		public static Item flower_dianthus_tile_item = new ItemBlock(BLOCKS.flower_dianthus)
+				.setRegistryName(BLOCKS.flower_dianthus.getRegistryName());
+		public static Item flower_lycoris_tile_item = new ItemBlock(BLOCKS.flower_lycoris)
+				.setRegistryName(BLOCKS.flower_lycoris.getRegistryName());
+		public static Item flower_gentiala_tile_item = new ItemBlock(BLOCKS.flower_gentiana)
+				.setRegistryName(BLOCKS.flower_gentiana.getRegistryName());
 	}
 
 	// sound event holder
@@ -207,7 +251,12 @@ public class DseMod {
 				IMAS_RECORDS.sakuranokoro,
 
 				// itemとしてのブロックを登録
-				new ItemBlock(BLOCKS.rail_dse).setRegistryName(BLOCKS.rail_dse.getRegistryName())
+				BLOCK_ITEMS.rail_dse_tile_item,
+				BLOCK_ITEMS.flower_cosmos_tile_item,
+				BLOCK_ITEMS.flower_myosotis_tile_item,
+				BLOCK_ITEMS.flower_dianthus_tile_item,
+				BLOCK_ITEMS.flower_lycoris_tile_item,
+				BLOCK_ITEMS.flower_gentiala_tile_item
 				);
 	}
 
@@ -215,7 +264,12 @@ public class DseMod {
 	protected static void registerBlocks(RegistryEvent.Register<Block> event) {
 		event.getRegistry().registerAll(
 				BLOCKS.mame,
-				BLOCKS.rail_dse
+				BLOCKS.rail_dse,
+				BLOCKS.flower_cosmos,
+				BLOCKS.flower_myosotis,
+				BLOCKS.flower_dianthus,
+				BLOCKS.flower_lycoris,
+				BLOCKS.flower_gentiana
 				);
 	}
 
@@ -237,6 +291,7 @@ public class DseMod {
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		MinecraftForge.addGrassSeed(new ItemStack(ITEMS.mamedol_seeds), 1);
+		GameRegistry.registerWorldGenerator(new com.dse.dseMod.worldgen.WorldGenDseFlower(), 1);
 		proxy.postInit(event);
 	}
 }

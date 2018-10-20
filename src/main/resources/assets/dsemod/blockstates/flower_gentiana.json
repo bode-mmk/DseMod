@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "age=0": { "model": "dsemod:flower_gentiana_close" },
+        "age=1": { "model": "dsemod:flower_gentiana_open" }
+    }
+}
