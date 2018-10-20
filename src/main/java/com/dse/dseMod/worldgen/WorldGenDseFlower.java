@@ -5,6 +5,7 @@ import java.util.Random;
 import com.dse.dseMod.DseMod;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProviderSurface;
@@ -33,9 +34,9 @@ public class WorldGenDseFlower implements IWorldGenerator {
 		Block flower = list[rand.nextInt(list.length)];
 
 		BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
-		if(worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 255) && flower.canBlockStay()) {
-			// System.out.println("x:"+blockpos.getX()+" y:"+blockpos.getY()+" z:"+blockpos.getZ());
-			worldIn.setBlockState(blockpos, flower.getDefaultState(), 2);
+		if(worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 255) && (worldIn.getBlockState(blockpos.down()).getBlock() == Blocks.GRASS )) {
+			System.out.println("x:"+blockpos.getX()+" y:"+blockpos.getY()+" z:"+blockpos.getZ());
+			worldIn.setBlockState(blockpos, flower.getDefaultState());
 		}
 
 		return true;

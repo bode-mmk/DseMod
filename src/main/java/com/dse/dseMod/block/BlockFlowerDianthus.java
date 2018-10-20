@@ -29,7 +29,7 @@ public class BlockFlowerDianthus extends BlockCrops {
 
 	@Override
 	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state) {
-		return this.canSustainPlant(state, worldIn, pos.down(), net.minecraft.util.EnumFacing.UP, this);
+		return true;
 	}
 
 	@Override
