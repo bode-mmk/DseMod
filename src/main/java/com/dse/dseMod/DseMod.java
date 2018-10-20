@@ -1,5 +1,6 @@
 package com.dse.dseMod;
 
+import com.dse.dseMod.block.BlockAodatami;
 import com.dse.dseMod.block.BlockFlowerCosmos;
 import com.dse.dseMod.block.BlockFlowerDianthus;
 import com.dse.dseMod.block.BlockFlowerGentiana;
@@ -20,6 +21,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemSlab;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
@@ -148,6 +150,8 @@ public class DseMod {
 				.setCreativeTab(CreativeTabs.DECORATIONS)
 				.setUnlocalizedName("flower_gentiana")
 				.setRegistryName("flower_gentiana");
+		public static BlockAodatami aodatami_slab = new BlockAodatami.Half();
+		public static BlockAodatami aodatami_slab_double = new BlockAodatami.Double();
 	}
 
 	public static class BLOCK_ITEMS{
@@ -163,6 +167,7 @@ public class DseMod {
 				.setRegistryName(BLOCKS.flower_lycoris.getRegistryName());
 		public static Item flower_gentiala_tile_item = new ItemBlock(BLOCKS.flower_gentiana)
 				.setRegistryName(BLOCKS.flower_gentiana.getRegistryName());
+		public static Item aodatami_slab_tile_item = new ItemSlab(BLOCKS.aodatami_slab, BLOCKS.aodatami_slab, BLOCKS.aodatami_slab_double).setRegistryName(BLOCKS.aodatami_slab.getRegistryName());
 	}
 
 	// sound event holder
@@ -256,7 +261,8 @@ public class DseMod {
 				BLOCK_ITEMS.flower_myosotis_tile_item,
 				BLOCK_ITEMS.flower_dianthus_tile_item,
 				BLOCK_ITEMS.flower_lycoris_tile_item,
-				BLOCK_ITEMS.flower_gentiala_tile_item
+				BLOCK_ITEMS.flower_gentiala_tile_item,
+				BLOCK_ITEMS.aodatami_slab_tile_item
 				);
 	}
 
@@ -269,7 +275,9 @@ public class DseMod {
 				BLOCKS.flower_myosotis,
 				BLOCKS.flower_dianthus,
 				BLOCKS.flower_lycoris,
-				BLOCKS.flower_gentiana
+				BLOCKS.flower_gentiana,
+				BLOCKS.aodatami_slab,
+				BLOCKS.aodatami_slab_double
 				);
 	}
 

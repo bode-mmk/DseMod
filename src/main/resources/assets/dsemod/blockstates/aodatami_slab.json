@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom,variant=default": { "model": "dsemod:aodatami_half_slab" },
+        "half=top,variant=default": { "model": "dsemod:aodatami_upper_slab" }
+    }
+}
