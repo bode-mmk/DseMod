@@ -60,8 +60,6 @@ public class ItemDirectionedSlab extends ItemBlock {
                 Comparable<?> comparable1 = iblockstate.getValue(iproperty);
                 BlockSlab.EnumBlockHalf blockslab$enumblockhalf = (BlockSlab.EnumBlockHalf)iblockstate.getValue(BlockSlab.HALF);
 
-                System.out.println("c" + comparable + " c2" + comparable1);
-
                 if ((facing == EnumFacing.UP && blockslab$enumblockhalf == BlockSlab.EnumBlockHalf.BOTTOM || facing == EnumFacing.DOWN && blockslab$enumblockhalf == BlockSlab.EnumBlockHalf.TOP) && comparable1 == comparable)
                 {
                     IBlockState iblockstate1 = this.makeState(iproperty, comparable1);
