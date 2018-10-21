@@ -18,9 +18,6 @@ public class WorldGenDseFlower implements IWorldGenerator {
 	}
 
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
-		//:DEBUG
-		//System.out.println("debug");
-
 		Block list[] = {
 				DseMod.BLOCKS.flower_cosmos,
 				DseMod.BLOCKS.flower_dianthus,
@@ -35,7 +32,6 @@ public class WorldGenDseFlower implements IWorldGenerator {
 
 		BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 		if(worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 255) && (worldIn.getBlockState(blockpos.down()).getBlock() == Blocks.GRASS )) {
-			System.out.println("x:"+blockpos.getX()+" y:"+blockpos.getY()+" z:"+blockpos.getZ());
 			worldIn.setBlockState(blockpos, flower.getDefaultState());
 		}
 
