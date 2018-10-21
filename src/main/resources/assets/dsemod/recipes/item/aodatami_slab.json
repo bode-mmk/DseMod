@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"M",
+    "X"
+  ],
+  "key": {
+    "X": {
+      "item": "dsemod:kidatami_slab",
+      "data": 0
+    },
+    "M": {
+      "item": "dsemod:mamedol_seeds"
+    }
+  },
+  "result": {
+    "item": "dsemod:aodatami_slab",
+    "data": 0,
+    "count": 1
+  }
+}
