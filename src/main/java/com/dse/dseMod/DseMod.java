@@ -6,6 +6,7 @@ import com.dse.dseMod.block.BlockFlowerDianthus;
 import com.dse.dseMod.block.BlockFlowerGentiana;
 import com.dse.dseMod.block.BlockFlowerLycoris;
 import com.dse.dseMod.block.BlockFlowerMyosotis;
+import com.dse.dseMod.block.BlockKidatami;
 import com.dse.dseMod.block.BlockMame;
 import com.dse.dseMod.block.BlockRailDse;
 import com.dse.dseMod.item.Dsecart;
@@ -152,6 +153,8 @@ public class DseMod {
 				.setRegistryName("flower_gentiana");
 		public static BlockAodatami aodatami_slab = new BlockAodatami.Half();
 		public static BlockAodatami aodatami_slab_double = new BlockAodatami.Double();
+		public static BlockKidatami kidatami_slab = new BlockKidatami.Half();
+		public static BlockKidatami kidatami_slab_double = new BlockKidatami.Double();
 	}
 
 	public static class BLOCK_ITEMS{
@@ -168,6 +171,7 @@ public class DseMod {
 		public static Item flower_gentiala_tile_item = new ItemBlock(BLOCKS.flower_gentiana)
 				.setRegistryName(BLOCKS.flower_gentiana.getRegistryName());
 		public static Item aodatami_slab_tile_item = new ItemDirectionedSlab(BLOCKS.aodatami_slab, BLOCKS.aodatami_slab, BLOCKS.aodatami_slab_double).setRegistryName(BLOCKS.aodatami_slab.getRegistryName());
+		public static Item kidatami_slab_tile_item = new ItemDirectionedSlab(BLOCKS.kidatami_slab, BLOCKS.kidatami_slab, BLOCKS.kidatami_slab_double).setRegistryName(BLOCKS.kidatami_slab.getRegistryName());
 	}
 
 	// sound event holder
@@ -262,7 +266,8 @@ public class DseMod {
 				BLOCK_ITEMS.flower_dianthus_tile_item,
 				BLOCK_ITEMS.flower_lycoris_tile_item,
 				BLOCK_ITEMS.flower_gentiala_tile_item,
-				BLOCK_ITEMS.aodatami_slab_tile_item
+				BLOCK_ITEMS.aodatami_slab_tile_item,
+				BLOCK_ITEMS.kidatami_slab_tile_item
 				);
 	}
 
@@ -277,7 +282,9 @@ public class DseMod {
 				BLOCKS.flower_lycoris,
 				BLOCKS.flower_gentiana,
 				BLOCKS.aodatami_slab,
-				BLOCKS.aodatami_slab_double
+				BLOCKS.aodatami_slab_double,
+				BLOCKS.kidatami_slab,
+				BLOCKS.kidatami_slab_double
 				);
 	}
 
