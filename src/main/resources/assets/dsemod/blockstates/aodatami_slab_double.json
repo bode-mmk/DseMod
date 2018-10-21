@@ -1,5 +1,6 @@
 {
     "variants": {
-        "variant=default": { "model": "dsemod:aodatami_slab_double" }
+        "variant=default": { "model": "dsemod:aodatami_slab_double" },
+        "variant=rotate": { "model": "dsemod:aodatami_slab_double_rotate" }
     }
 }

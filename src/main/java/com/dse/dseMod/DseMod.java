@@ -9,6 +9,7 @@ import com.dse.dseMod.block.BlockFlowerMyosotis;
 import com.dse.dseMod.block.BlockMame;
 import com.dse.dseMod.block.BlockRailDse;
 import com.dse.dseMod.item.Dsecart;
+import com.dse.dseMod.item.ItemDirectionedSlab;
 import com.dse.dseMod.item.MamedolEgg;
 import com.dse.dseMod.item.MamedolSeeds;
 import com.dse.dseMod.item.MamedolSeedsIrimame;
@@ -21,7 +22,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemSlab;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
@@ -167,7 +167,7 @@ public class DseMod {
 				.setRegistryName(BLOCKS.flower_lycoris.getRegistryName());
 		public static Item flower_gentiala_tile_item = new ItemBlock(BLOCKS.flower_gentiana)
 				.setRegistryName(BLOCKS.flower_gentiana.getRegistryName());
-		public static Item aodatami_slab_tile_item = new ItemSlab(BLOCKS.aodatami_slab, BLOCKS.aodatami_slab, BLOCKS.aodatami_slab_double).setRegistryName(BLOCKS.aodatami_slab.getRegistryName());
+		public static Item aodatami_slab_tile_item = new ItemDirectionedSlab(BLOCKS.aodatami_slab, BLOCKS.aodatami_slab, BLOCKS.aodatami_slab_double).setRegistryName(BLOCKS.aodatami_slab.getRegistryName());
 	}
 
 	// sound event holder
