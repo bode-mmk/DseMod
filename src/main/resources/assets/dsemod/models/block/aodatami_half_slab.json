@@ -1,0 +1,8 @@
+{
+    "parent": "block/half_slab",
+    "textures": {
+        "bottom": "dsemod:blocks/aodatami",
+        "top": "dsemod:blocks/aodatami",
+        "side": "dsemod:blocks/aodatami"
+    }
+}

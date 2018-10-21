@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "variant=default": { "model": "dsemod:kidatami_slab_double" },
+        "variant=rotate": { "model": "dsemod:kidatami_slab_double_rotate" }
+    }
+}

@@ -1,13 +1,16 @@
 package com.dse.dseMod;
 
+import com.dse.dseMod.block.BlockAodatami;
 import com.dse.dseMod.block.BlockFlowerCosmos;
 import com.dse.dseMod.block.BlockFlowerDianthus;
 import com.dse.dseMod.block.BlockFlowerGentiana;
 import com.dse.dseMod.block.BlockFlowerLycoris;
 import com.dse.dseMod.block.BlockFlowerMyosotis;
+import com.dse.dseMod.block.BlockKidatami;
 import com.dse.dseMod.block.BlockMame;
 import com.dse.dseMod.block.BlockRailDse;
 import com.dse.dseMod.item.Dsecart;
+import com.dse.dseMod.item.ItemDirectionedSlab;
 import com.dse.dseMod.item.MamedolEgg;
 import com.dse.dseMod.item.MamedolSeeds;
 import com.dse.dseMod.item.MamedolSeedsIrimame;
@@ -39,7 +42,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @EventBusSubscriber
 public class DseMod {
 	public static final String  MODID = "dsemod";
-	public static final String  VERSION = "0.2.0.4";
+	public static final String  VERSION = "0.2.0.5";
 	// world generator holder
 	//public static class WORLD_GEN {
 	//	public static IWorldGenerator dse_flower_generator = new com.dse.dseMod.worldgen.WorldGenDseFlower();
@@ -148,6 +151,10 @@ public class DseMod {
 				.setCreativeTab(CreativeTabs.DECORATIONS)
 				.setUnlocalizedName("flower_gentiana")
 				.setRegistryName("flower_gentiana");
+		public static BlockAodatami aodatami_slab = new BlockAodatami.Half();
+		public static BlockAodatami aodatami_slab_double = new BlockAodatami.Double();
+		public static BlockKidatami kidatami_slab = new BlockKidatami.Half();
+		public static BlockKidatami kidatami_slab_double = new BlockKidatami.Double();
 	}
 
 	public static class BLOCK_ITEMS{
@@ -163,6 +170,8 @@ public class DseMod {
 				.setRegistryName(BLOCKS.flower_lycoris.getRegistryName());
 		public static Item flower_gentiala_tile_item = new ItemBlock(BLOCKS.flower_gentiana)
 				.setRegistryName(BLOCKS.flower_gentiana.getRegistryName());
+		public static Item aodatami_slab_tile_item = new ItemDirectionedSlab(BLOCKS.aodatami_slab, BLOCKS.aodatami_slab, BLOCKS.aodatami_slab_double).setRegistryName(BLOCKS.aodatami_slab.getRegistryName());
+		public static Item kidatami_slab_tile_item = new ItemDirectionedSlab(BLOCKS.kidatami_slab, BLOCKS.kidatami_slab, BLOCKS.kidatami_slab_double).setRegistryName(BLOCKS.kidatami_slab.getRegistryName());
 	}
 
 	// sound event holder
@@ -256,7 +265,9 @@ public class DseMod {
 				BLOCK_ITEMS.flower_myosotis_tile_item,
 				BLOCK_ITEMS.flower_dianthus_tile_item,
 				BLOCK_ITEMS.flower_lycoris_tile_item,
-				BLOCK_ITEMS.flower_gentiala_tile_item
+				BLOCK_ITEMS.flower_gentiala_tile_item,
+				BLOCK_ITEMS.aodatami_slab_tile_item,
+				BLOCK_ITEMS.kidatami_slab_tile_item
 				);
 	}
 
@@ -269,7 +280,11 @@ public class DseMod {
 				BLOCKS.flower_myosotis,
 				BLOCKS.flower_dianthus,
 				BLOCKS.flower_lycoris,
-				BLOCKS.flower_gentiana
+				BLOCKS.flower_gentiana,
+				BLOCKS.aodatami_slab,
+				BLOCKS.aodatami_slab_double,
+				BLOCKS.kidatami_slab,
+				BLOCKS.kidatami_slab_double
 				);
 	}
 

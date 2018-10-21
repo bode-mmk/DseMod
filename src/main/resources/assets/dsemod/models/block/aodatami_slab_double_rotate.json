@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "dsemod:blocks/aodatami_rotate",
+        "side": "dsemod:blocks/aodatami_rotate"
+    }
+}
