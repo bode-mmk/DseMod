@@ -9,6 +9,7 @@ import com.dse.dseMod.block.BlockFlowerMyosotis;
 import com.dse.dseMod.block.BlockKidatami;
 import com.dse.dseMod.block.BlockMame;
 import com.dse.dseMod.block.BlockRailDse;
+import com.dse.dseMod.block.BlockWeatherFrog;
 import com.dse.dseMod.item.Dsecart;
 import com.dse.dseMod.item.ItemDirectionedSlab;
 import com.dse.dseMod.item.MamedolEgg;
@@ -151,6 +152,10 @@ public class DseMod {
 				.setCreativeTab(CreativeTabs.DECORATIONS)
 				.setUnlocalizedName("flower_gentiana")
 				.setRegistryName("flower_gentiana");
+		public static Block weather_frog = new BlockWeatherFrog()
+				.setCreativeTab(CreativeTabs.DECORATIONS)
+				.setUnlocalizedName("weather_frog")
+				.setRegistryName("weather_frog");
 		public static BlockAodatami aodatami_slab = new BlockAodatami.Half();
 		public static BlockAodatami aodatami_slab_double = new BlockAodatami.Double();
 		public static BlockKidatami kidatami_slab = new BlockKidatami.Half();
@@ -170,6 +175,8 @@ public class DseMod {
 				.setRegistryName(BLOCKS.flower_lycoris.getRegistryName());
 		public static Item flower_gentiala_tile_item = new ItemBlock(BLOCKS.flower_gentiana)
 				.setRegistryName(BLOCKS.flower_gentiana.getRegistryName());
+		public static Item weather_frog_tile_item = new ItemBlock(BLOCKS.weather_frog)
+				.setRegistryName(BLOCKS.weather_frog.getRegistryName());
 		public static Item aodatami_slab_tile_item = new ItemDirectionedSlab(BLOCKS.aodatami_slab, BLOCKS.aodatami_slab, BLOCKS.aodatami_slab_double).setRegistryName(BLOCKS.aodatami_slab.getRegistryName());
 		public static Item kidatami_slab_tile_item = new ItemDirectionedSlab(BLOCKS.kidatami_slab, BLOCKS.kidatami_slab, BLOCKS.kidatami_slab_double).setRegistryName(BLOCKS.kidatami_slab.getRegistryName());
 	}
@@ -266,6 +273,7 @@ public class DseMod {
 				BLOCK_ITEMS.flower_dianthus_tile_item,
 				BLOCK_ITEMS.flower_lycoris_tile_item,
 				BLOCK_ITEMS.flower_gentiala_tile_item,
+				BLOCK_ITEMS.weather_frog_tile_item,
 				BLOCK_ITEMS.aodatami_slab_tile_item,
 				BLOCK_ITEMS.kidatami_slab_tile_item
 				);
@@ -281,6 +289,7 @@ public class DseMod {
 				BLOCKS.flower_dianthus,
 				BLOCKS.flower_lycoris,
 				BLOCKS.flower_gentiana,
+				BLOCKS.weather_frog,
 				BLOCKS.aodatami_slab,
 				BLOCKS.aodatami_slab_double,
 				BLOCKS.kidatami_slab,
