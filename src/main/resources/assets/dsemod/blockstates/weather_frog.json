@@ -1,5 +1,8 @@
 {
     "variants": {
-        "normal": { "model": "dsemod:weather_frog" }
+        "direction=north": { "model": "dsemod:weather_frog" },
+        "direction=south": { "model": "dsemod:weather_frog", "y" : 180 },
+        "direction=west":  { "model": "dsemod:weather_frog", "y" : 270 },
+        "direction=east":  { "model": "dsemod:weather_frog", "y" : 90 }
     }
 }
