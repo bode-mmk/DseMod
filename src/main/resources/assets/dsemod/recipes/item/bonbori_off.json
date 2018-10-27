@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SWS" ,
+    "PTP" ,
+    "SWS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    },
+    "W": [
+      {
+        "item": "minecraft:wooden_slab",
+        "data": 0
+      },
+      {
+        "item": "minecraft:wooden_slab",
+        "data": 1
+      },
+      {
+        "item": "minecraft:wooden_slab",
+        "data": 2
+      },
+      {
+        "item": "minecraft:wooden_slab",
+        "data": 3
+      },
+      {
+        "item": "minecraft:wooden_slab",
+        "data": 4
+      },
+      {
+        "item": "minecraft:wooden_slab",
+        "data": 5
+      }
+    ],
+    "T": {
+      "item": "minecraft:torch"
+    }
+  },
+  "result": {
+    "item": "dsemod:bonbori_off"
+  }
+}
