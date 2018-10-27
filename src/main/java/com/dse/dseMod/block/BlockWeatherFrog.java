@@ -11,12 +11,14 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockWeatherFrog extends BlockDirectionedBlock {
 	public static final PropertyInteger POWER = PropertyInteger.create("power", 0, 2);
+	public static final AxisAlignedBB FROG_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.6D, 1.0D);
 
 	public BlockWeatherFrog() {
 		super(Material.ANVIL);
@@ -24,6 +26,11 @@ public class BlockWeatherFrog extends BlockDirectionedBlock {
 		this.setDefaultState(this.getStateFromMeta(0));
 		this.setUnlocalizedName("weather_frog");
 		this.setRegistryName("weather_frog");
+	}
+
+	@Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+		return FROG_AABB;
 	}
 
 	@Override
