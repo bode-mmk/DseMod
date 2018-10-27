@@ -46,7 +46,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @EventBusSubscriber
 public class DseMod {
 	public static final String  MODID = "dsemod";
-	public static final String  VERSION = "0.2.0.5";
+	public static final String  VERSION = "0.2.0.6";
 	// world generator holder
 	//public static class WORLD_GEN {
 	//	public static IWorldGenerator dse_flower_generator = new com.dse.dseMod.worldgen.WorldGenDseFlower();
