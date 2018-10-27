@@ -1,6 +1,7 @@
 package com.dse.dseMod.block;
 
 import com.dse.dseMod.DseMod;
+import com.dse.dseMod.tileentity.TileEntityBonbori;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -9,25 +10,68 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 
 public class BlockBonbori extends Block {
 	public static final PropertyEnum<LightMode> LIGHT_MODE = PropertyEnum.<LightMode>create("light_mode", LightMode.class);
 	public static final AxisAlignedBB FROG_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.6D, 1.0D);
+	private final boolean isLight;
+	private static final int MORNING_TICK_TIME = 1000;
+	private static final int NIGHT_TICK_TIME = 12517;
 
-	public BlockBonbori() {
+	public BlockBonbori(boolean isLight) {
 		super(Material.WOOD);
 		this.setHardness(0.1f);
 		this.setCreativeTab(CreativeTabs.DECORATIONS);
 		this.setDefaultState(this.getStateFromMeta(0));
-		this.setUnlocalizedName("bonbori");
-		this.setRegistryName("bonbori");
+		this.isLight = isLight;
+		if(isLight) {
+			this.setUnlocalizedName("bonbori_on");
+			this.setRegistryName("bonbori_on");
+			this.setLightLevel(1.0f);
+		}else {
+			this.setUnlocalizedName("bonbori_off");
+			this.setRegistryName("bonbori_off");
+			this.setLightLevel(0.0f);
+		}
 	}
+
+	public void updateLightPower(World world, BlockPos pos) {
+		long time = world.getWorldTime();
+
+		if(world.getBlockState(pos).getValue(LIGHT_MODE) == LightMode.AUTO_ON) {
+			if(BlockBonbori.MORNING_TICK_TIME < time && time < BlockBonbori.NIGHT_TICK_TIME){
+				world.setBlockState(pos, DseMod.BLOCKS.bonbori_off.getDefaultState().withProperty(LIGHT_MODE, LightMode.AUTO_ON), 2);
+			}else {
+				world.setBlockState(pos, DseMod.BLOCKS.bonbori_on.getDefaultState().withProperty(LIGHT_MODE, LightMode.AUTO_ON), 2);
+			}
+		}
+	}
+
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    {
+    	if(!worldIn.isRemote) {
+    		LightMode mode = state.getValue(LIGHT_MODE);
+    		if(!this.isLight && mode == LightMode.AUTO_OFF) {
+    			worldIn.setBlockState(pos,  DseMod.BLOCKS.bonbori_on.getDefaultState(), 2);
+    		}else if(this.isLight && mode == LightMode.AUTO_OFF){
+    			worldIn.setBlockState(pos, DseMod.BLOCKS.bonbori_off.getDefaultState().withProperty(LIGHT_MODE, LightMode.AUTO_ON), 2);
+    		}else {
+    			worldIn.setBlockState(pos, DseMod.BLOCKS.bonbori_off.getDefaultState(), 2);
+    		}
+    	}
+    	return true;
+    }
 
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
@@ -44,7 +88,6 @@ public class BlockBonbori extends Block {
 		return LightMode.metaFromLightMode(state.getValue(LIGHT_MODE));
 	}
 
-	/*
 	@Override
 	public boolean hasTileEntity(IBlockState state) {
 		return true;
@@ -52,9 +95,8 @@ public class BlockBonbori extends Block {
 
 	@Override
 	public TileEntity createTileEntity(World world, IBlockState state) {
-		return new TileEntityWeatherFrog();
+		return new TileEntityBonbori();
 	}
-	*/
 
 	@Override
     public EnumBlockRenderType getRenderType(IBlockState state)
@@ -90,8 +132,6 @@ public class BlockBonbori extends Block {
 
 	public static enum LightMode implements IStringSerializable
 	{
-		ON("on"),
-		OFF("off"),
 		AUTO_ON("auto_on"),
 		AUTO_OFF("auto_off");
 
@@ -104,10 +144,6 @@ public class BlockBonbori extends Block {
 		public static LightMode byMetadata(int meta)
 		{
 			if(meta == 0) {
-				return LightMode.OFF;
-			}else if(meta == 1) {
-				return LightMode.ON;
-			}else if(meta == 2){
 				return LightMode.AUTO_OFF;
 			}else {
 				return LightMode.AUTO_ON;
@@ -115,24 +151,10 @@ public class BlockBonbori extends Block {
 		}
 
 		public static int metaFromLightMode(LightMode mode) {
-			if(mode == LightMode.OFF) {
+			if(mode == LightMode.AUTO_OFF){
 				return 0;
-			}else if(mode == LightMode.ON) {
+			}else {
 				return 1;
-			}else if(mode == LightMode.AUTO_OFF){
-				return 2;
-			}else {
-				return 3;
-			}
-		}
-
-		public static LightMode toggleLightMode(LightMode mode) {
-			if(mode == LightMode.OFF) {
-				return LightMode.ON;
-			}else if(mode == LightMode.ON) {
-				return LightMode.AUTO_OFF;
-			}else {
-				return LightMode.OFF;
 			}
 		}
 

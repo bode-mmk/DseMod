@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "light_mode=off": { "model": "dsemod:bonbori_off" },
-        "light_mode=on": { "model": "dsemod:bonbori_on" },
-        "light_mode=auto_off": { "model": "dsemod:bonbori_off" },
-        "light_mode=auto_on": { "model": "dsemod:bonbori_on" }
-    }
-}
