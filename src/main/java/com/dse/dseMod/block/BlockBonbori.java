@@ -24,7 +24,7 @@ import net.minecraft.world.World;
 
 public class BlockBonbori extends Block {
 	public static final PropertyEnum<LightMode> LIGHT_MODE = PropertyEnum.<LightMode>create("light_mode", LightMode.class);
-	public static final AxisAlignedBB FROG_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.6D, 1.0D);
+	public static final AxisAlignedBB FROG_AABB = new AxisAlignedBB(0.2D, 0.0D, 0.2D, 0.8D, 0.6D, 0.8D);
 	private final boolean isLight;
 	private static final int MORNING_TICK_TIME = 1000;
 	private static final int NIGHT_TICK_TIME = 12517;
