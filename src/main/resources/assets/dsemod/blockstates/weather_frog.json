@@ -8,9 +8,9 @@
         "direction=south,power=1": { "model": "dsemod:weather_frog_rain", "y" : 180 },
         "direction=west,power=1":  { "model": "dsemod:weather_frog_rain", "y" : 270 },
         "direction=east,power=1":  { "model": "dsemod:weather_frog_rain", "y" : 90 },
-        "direction=north,power=2": { "model": "dsemod:weather_frog" },
-        "direction=south,power=2": { "model": "dsemod:weather_frog", "y" : 180 },
-        "direction=west,power=2":  { "model": "dsemod:weather_frog", "y" : 270 },
-        "direction=east,power=2":  { "model": "dsemod:weather_frog", "y" : 90 }
+        "direction=north,power=2": { "model": "dsemod:weather_frog_thunder" },
+        "direction=south,power=2": { "model": "dsemod:weather_frog_thunder", "y" : 180 },
+        "direction=west,power=2":  { "model": "dsemod:weather_frog_thunder", "y" : 270 },
+        "direction=east,power=2":  { "model": "dsemod:weather_frog_thunder", "y" : 90 }
     }
 }
