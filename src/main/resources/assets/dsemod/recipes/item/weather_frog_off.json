@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LWL" ,
+    "SCS" ,
+    "LRL"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:cauldron"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    },
+    "L": {
+      "item": "minecraft:waterlily"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "S": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "result": {
+    "item": "dsemod:weather_frog"
+  }
+}
