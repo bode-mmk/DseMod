@@ -22,13 +22,13 @@ public class BlockDirectionedBlock extends Block {
 
 
 	@Override
-	public final IBlockState getStateFromMeta(final int meta) {
+	public IBlockState getStateFromMeta(final int meta) {
 		IBlockState blockstate = this.blockState.getBaseState().withProperty(DIRECTION, EnumFacing.getHorizontal(meta));
 		return blockstate;
 	}
 
 	@Override
-	public final int getMetaFromState(final IBlockState state) {
+	public int getMetaFromState(final IBlockState state) {
 		return ((EnumFacing)state.getValue(DIRECTION)).getHorizontalIndex();
 	}
 

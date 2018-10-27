@@ -18,6 +18,7 @@ import com.dse.dseMod.item.MamedolSeedsIrimame;
 import com.dse.dseMod.potion.PotionHannari;
 import com.dse.dseMod.proxy.CommonProxy;
 import com.dse.dseMod.record.ImasRecord;
+import com.dse.dseMod.tileentity.TileEntityWeatherFrog;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -152,10 +153,7 @@ public class DseMod {
 				.setCreativeTab(CreativeTabs.DECORATIONS)
 				.setUnlocalizedName("flower_gentiana")
 				.setRegistryName("flower_gentiana");
-		public static Block weather_frog = new BlockWeatherFrog()
-				.setCreativeTab(CreativeTabs.DECORATIONS)
-				.setUnlocalizedName("weather_frog")
-				.setRegistryName("weather_frog");
+		public static BlockWeatherFrog weather_frog = new BlockWeatherFrog();
 		public static BlockAodatami aodatami_slab = new BlockAodatami.Half();
 		public static BlockAodatami aodatami_slab_double = new BlockAodatami.Double();
 		public static BlockKidatami kidatami_slab = new BlockKidatami.Half();
@@ -315,7 +313,13 @@ public class DseMod {
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		MinecraftForge.addGrassSeed(new ItemStack(ITEMS.mamedol_seeds), 1);
+
+		//register world generator
 		GameRegistry.registerWorldGenerator(new com.dse.dseMod.worldgen.WorldGenDseFlower(), 1);
+
+		//register tile entity
+		GameRegistry.registerTileEntity(TileEntityWeatherFrog.class, "tile_entity_weather_frog");
+
 		proxy.postInit(event);
 	}
 }
