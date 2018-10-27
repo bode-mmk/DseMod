@@ -1,5 +1,6 @@
 package com.dse.dseMod.block;
 
+import com.dse.dseMod.DseMod;
 import com.dse.dseMod.tileentity.TileEntityWeatherFrog;
 
 import net.minecraft.block.material.Material;
@@ -8,6 +9,7 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
@@ -21,7 +23,8 @@ public class BlockWeatherFrog extends BlockDirectionedBlock {
 	public static final AxisAlignedBB FROG_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.6D, 1.0D);
 
 	public BlockWeatherFrog() {
-		super(Material.ANVIL);
+		super(Material.WOOD);
+		this.setHardness(0.1f);
 		this.setCreativeTab(CreativeTabs.DECORATIONS);
 		this.setDefaultState(this.getStateFromMeta(0));
 		this.setUnlocalizedName("weather_frog");
@@ -89,6 +92,11 @@ public class BlockWeatherFrog extends BlockDirectionedBlock {
 		if(((Integer)state.getValue(POWER)).intValue() != power) {
 			worldIn.setBlockState(pos, state.withProperty(POWER, Integer.valueOf(power)), 3);
 		}
+	}
+
+	@Override
+	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, net.minecraft.world.IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+		drops.add(new ItemStack(DseMod.BLOCK_ITEMS.weather_frog_tile_item, 1, 0));
 	}
 
 	@Override
