@@ -89,8 +89,16 @@ public class BlockWeatherFrog extends BlockDirectionedBlock {
 
 	public void updatePower(World worldIn, BlockPos pos, int power) {
 		IBlockState state = worldIn.getBlockState(pos);
+		TileEntity tileentity = worldIn.getTileEntity(pos);
+
 		if(((Integer)state.getValue(POWER)).intValue() != power) {
+			System.out.println("frog done");
 			worldIn.setBlockState(pos, state.withProperty(POWER, Integer.valueOf(power)), 3);
+		}
+
+		if(tileentity != null) {
+			tileentity.validate();
+			worldIn.setTileEntity(pos,  tileentity);
 		}
 	}
 
