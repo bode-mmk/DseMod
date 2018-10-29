@@ -17,6 +17,8 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockWeatherFrog extends BlockDirectionedBlock {
 	public static final PropertyInteger POWER = PropertyInteger.create("power", 0, 2);
@@ -75,6 +77,14 @@ public class BlockWeatherFrog extends BlockDirectionedBlock {
 		return false;
 	}
 
+	/*
+	@Override
+    public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+    {
+		System.out.println("test");
+        return state;
+    } */
+
 	@Override
     public boolean canProvidePower(IBlockState state)
     {
@@ -92,7 +102,7 @@ public class BlockWeatherFrog extends BlockDirectionedBlock {
 		TileEntity tileentity = worldIn.getTileEntity(pos);
 
 		if(((Integer)state.getValue(POWER)).intValue() != power) {
-			System.out.println("frog done");
+			System.out.println("val:" + ((Integer)state.getValue(POWER)).intValue() + " power:" + power);
 			worldIn.setBlockState(pos, state.withProperty(POWER, Integer.valueOf(power)), 3);
 		}
 
@@ -101,6 +111,12 @@ public class BlockWeatherFrog extends BlockDirectionedBlock {
 			worldIn.setTileEntity(pos,  tileentity);
 		}
 	}
+
+    @SideOnly(Side.CLIENT)
+    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
+    {
+        return true;
+    }
 
 	@Override
 	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, net.minecraft.world.IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {

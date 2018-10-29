@@ -8,8 +8,8 @@ import net.minecraft.util.ITickable;
 public class TileEntityWeatherFrog extends TileEntity implements ITickable{
 	@Override
 	public void update() {
-			// 雨と雷を検知
-		if(!this.world.isRemote && this.getBlockType() == DseMod.BLOCKS.weather_frog && this.world.getTotalWorldTime() % 20L == 0L) {
+		// 雨と雷を検知
+		if(/* this.world.isRemote && */ this.getBlockType() == DseMod.BLOCKS.weather_frog && this.world.getTotalWorldTime() % 20L == 0L) {
 			int power = 0;
 			if(this.world.isRaining()) {
 				if(this.world.isThundering()) {
