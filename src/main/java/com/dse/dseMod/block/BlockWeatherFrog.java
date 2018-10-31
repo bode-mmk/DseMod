@@ -28,7 +28,7 @@ public class BlockWeatherFrog extends BlockDirectionedBlock {
 		super(Material.WOOD);
 		this.setHardness(0.1f);
 		this.setCreativeTab(CreativeTabs.DECORATIONS);
-		this.setDefaultState(this.getStateFromMeta(0));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(DIRECTION, EnumFacing.NORTH).withProperty(POWER, Integer.valueOf(0)));
 		this.setUnlocalizedName("weather_frog");
 		this.setRegistryName("weather_frog");
 	}
@@ -40,8 +40,9 @@ public class BlockWeatherFrog extends BlockDirectionedBlock {
 
 	@Override
 	public IBlockState getStateFromMeta(final int meta) {
-		IBlockState blockstate = super.getStateFromMeta(meta & 3);
-		blockstate.withProperty(POWER, metaToPower(meta));
+		IBlockState blockstate = this.getDefaultState()
+				.withProperty(DIRECTION, EnumFacing.getHorizontal(meta & 3))
+				.withProperty(POWER, Integer.valueOf(metaToPower(meta)));
 		return blockstate;
 	}
 
@@ -50,6 +51,14 @@ public class BlockWeatherFrog extends BlockDirectionedBlock {
 		return ((EnumFacing)state.getValue(DIRECTION)).getHorizontalIndex() + powerToMeta(((Integer)state.getValue(POWER)).intValue());
 	}
 
+	/*
+	@Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+		if(!worldIn.isRemote) {
+			worldIn.setBlockState(pos, state.withProperty(POWER, Integer.valueOf(2)), 3);
+		}
+		return true;
+	} */
 
 	@Override
 	public boolean hasTileEntity(IBlockState state) {
@@ -102,7 +111,6 @@ public class BlockWeatherFrog extends BlockDirectionedBlock {
 		TileEntity tileentity = worldIn.getTileEntity(pos);
 
 		if(((Integer)state.getValue(POWER)).intValue() != power) {
-			System.out.println("val:" + ((Integer)state.getValue(POWER)).intValue() + " power:" + power);
 			worldIn.setBlockState(pos, state.withProperty(POWER, Integer.valueOf(power)), 3);
 		}
 
@@ -125,7 +133,7 @@ public class BlockWeatherFrog extends BlockDirectionedBlock {
 
 	@Override
 	protected BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, new IProperty[] {POWER, DIRECTION});
+		return new BlockStateContainer(this, new IProperty[] {DIRECTION,  POWER});
 	}
 
 	public static int metaToPower(int meta) {

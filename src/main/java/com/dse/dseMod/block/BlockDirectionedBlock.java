@@ -23,7 +23,7 @@ public class BlockDirectionedBlock extends Block {
 
 	@Override
 	public IBlockState getStateFromMeta(final int meta) {
-		IBlockState blockstate = this.blockState.getBaseState().withProperty(DIRECTION, EnumFacing.getHorizontal(meta));
+		IBlockState blockstate = this.getDefaultState().withProperty(DIRECTION, EnumFacing.getHorizontal(meta));
 		return blockstate;
 	}
 
@@ -41,7 +41,6 @@ public class BlockDirectionedBlock extends Block {
 	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
 		IBlockState state = super.getStateForPlacement(worldIn, pos, facing, hitX, hitY, hitZ, meta, placer);
 		state = state.withProperty(DIRECTION, placer.getHorizontalFacing().getOpposite());
-
 		return state;
 	}
 }
