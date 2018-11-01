@@ -1,7 +1,9 @@
 package com.dse.dseMod.entity;
 
+import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.world.World;
 
 public class EntityDsecartEmpty extends EntityDsecart {
@@ -34,5 +36,10 @@ public class EntityDsecartEmpty extends EntityDsecart {
 
             return true;
         }
+    }
+
+    public static void registerFixesMinecartEmpty(DataFixer fixer)
+    {
+        EntityMinecart.registerFixesMinecart(fixer, EntityDsecartEmpty.class);
     }
 }
