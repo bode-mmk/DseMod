@@ -2,6 +2,7 @@ package com.dse.dseMod.entity;
 
 import com.dse.dseMod.DseMod;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockRailBase;
 import net.minecraft.block.BlockRailPowered;
 import net.minecraft.block.state.IBlockState;
@@ -11,21 +12,26 @@ import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityDsecart extends EntityMinecart {
-	/*
-    private static final DataParameter<Integer> ROLLING_AMPLITUDE = EntityDataManager.<Integer>createKey(EntityMinecart.class, DataSerializers.VARINT);
-    private static final DataParameter<Integer> ROLLING_DIRECTION = EntityDataManager.<Integer>createKey(EntityMinecart.class, DataSerializers.VARINT);
-    private static final DataParameter<Float> DAMAGE = EntityDataManager.<Float>createKey(EntityMinecart.class, DataSerializers.FLOAT);
-    private static final DataParameter<Integer> DISPLAY_TILE = EntityDataManager.<Integer>createKey(EntityMinecart.class, DataSerializers.VARINT);
-    private static final DataParameter<Integer> DISPLAY_TILE_OFFSET = EntityDataManager.<Integer>createKey(EntityMinecart.class, DataSerializers.VARINT);
-    private static final DataParameter<Boolean> SHOW_BLOCK = EntityDataManager.<Boolean>createKey(EntityMinecart.class, DataSerializers.BOOLEAN);
-    */
+    protected static final DataParameter<Integer> ROLLING_AMPLITUDE = EntityDataManager.<Integer>createKey(EntityDsecart.class, DataSerializers.VARINT);
+    protected static final DataParameter<Integer> ROLLING_DIRECTION = EntityDataManager.<Integer>createKey(EntityDsecart.class, DataSerializers.VARINT);
+    protected static final DataParameter<Float> DAMAGE = EntityDataManager.<Float>createKey(EntityDsecart.class, DataSerializers.FLOAT);
+    protected static final DataParameter<Integer> DISPLAY_TILE = EntityDataManager.<Integer>createKey(EntityDsecart.class, DataSerializers.VARINT);
+    protected static final DataParameter<Integer> DISPLAY_TILE_OFFSET = EntityDataManager.<Integer>createKey(EntityDsecart.class, DataSerializers.VARINT);
+    protected static final DataParameter<Boolean> SHOW_BLOCK = EntityDataManager.<Boolean>createKey(EntityDsecart.class, DataSerializers.BOOLEAN);
 
     /** Minecart rotational logic matrix (from EntityMinecart) */
     private static final int[][][] MATRIX = new int[][][] {{{0, 0, -1}, {0, 0, 1}}, {{ -1, 0, 0}, {1, 0, 0}}, {{ -1, -1, 0}, {1, 0, 0}}, {{ -1, 0, 0}, {1, -1, 0}}, {{0, 0, -1}, {0, -1, 1}}, {{0, -1, -1}, {0, 0, 1}}, {{0, 0, 1}, {1, 0, 0}}, {{0, 0, 1}, { -1, 0, 0}}, {{0, 0, -1}, { -1, 0, 0}}, {{0, 0, -1}, {1, 0, 0}}};
@@ -48,22 +54,21 @@ public class EntityDsecart extends EntityMinecart {
     	this.prevPosZ = z;
     }
 
+    @Override
     public boolean hasNoGravity() {
     	return true;
     }
 
+    @Override
     protected void entityInit()
     {
     	super.entityInit();
-    	/*
-    	this.dataManager = new EntityDataManager(this);
         this.dataManager.register(ROLLING_AMPLITUDE, Integer.valueOf(0));
         this.dataManager.register(ROLLING_DIRECTION, Integer.valueOf(1));
         this.dataManager.register(DAMAGE, Float.valueOf(0.0F));
         this.dataManager.register(DISPLAY_TILE, Integer.valueOf(0));
         this.dataManager.register(DISPLAY_TILE_OFFSET, Integer.valueOf(6));
         this.dataManager.register(SHOW_BLOCK, Boolean.valueOf(false));
-        */
     }
 
     public static EntityDsecart create(World worldIn, double x, double y, double z, EntityMinecart.Type typeIn) {
@@ -72,23 +77,117 @@ public class EntityDsecart extends EntityMinecart {
 
 	@Override
 	public Type getType() {
-		// TODO 自動生成されたメソッド・スタブ
 		return EntityMinecart.Type.RIDEABLE;
 	}
 
+	@Override
     protected double getMaximumSpeed()
     {
         return 1.2D;
     }
 
+	@Override
     public float getMaxCartSpeedOnRail()
     {
         return 1.2f;
     }
 
+	@Override
     protected double getMaxSpeed()
     {
     	return 30.0D;
+    }
+
+	@Override
+    public void setDamage(float damage)
+    {
+        this.dataManager.set(DAMAGE, Float.valueOf(damage));
+    }
+
+	@Override
+    public float getDamage()
+    {
+        return ((Float)this.dataManager.get(DAMAGE)).floatValue();
+    }
+
+	@Override
+    public IBlockState getDisplayTile()
+    {
+        return !this.hasDisplayTile() ? this.getDefaultDisplayTile() : Block.getStateById(((Integer)this.getDataManager().get(DISPLAY_TILE)).intValue());
+    }
+
+	@Override
+    public int getDisplayTileOffset()
+    {
+        return !this.hasDisplayTile() ? this.getDefaultDisplayTileOffset() : ((Integer)this.getDataManager().get(DISPLAY_TILE_OFFSET)).intValue();
+    }
+
+	@Override
+    public IBlockState getDefaultDisplayTile()
+    {
+        return Blocks.AIR.getDefaultState();
+    }
+
+	@Override
+    public void setDisplayTile(IBlockState displayTile)
+    {
+        this.getDataManager().set(DISPLAY_TILE, Integer.valueOf(Block.getStateId(displayTile)));
+        this.setHasDisplayTile(true);
+    }
+
+	@Override
+    public void setDisplayTileOffset(int displayTileOffset)
+    {
+        this.getDataManager().set(DISPLAY_TILE_OFFSET, Integer.valueOf(displayTileOffset));
+        this.setHasDisplayTile(true);
+    }
+
+	@Override
+    public boolean hasDisplayTile()
+    {
+        return ((Boolean)this.getDataManager().get(SHOW_BLOCK)).booleanValue();
+    }
+
+	@Override
+    public void setHasDisplayTile(boolean showBlock)
+    {
+        this.getDataManager().set(SHOW_BLOCK, Boolean.valueOf(showBlock));
+    }
+
+    /**
+     * Sets the rolling amplitude the cart rolls while being attacked.
+     */
+	@Override
+    public void setRollingAmplitude(int rollingAmplitude)
+    {
+        this.dataManager.set(ROLLING_AMPLITUDE, Integer.valueOf(rollingAmplitude));
+    }
+
+    /**
+     * Gets the rolling amplitude the cart rolls while being attacked.
+     */
+    @Override
+    public int getRollingAmplitude()
+    {
+        return ((Integer)this.dataManager.get(ROLLING_AMPLITUDE)).intValue();
+    }
+
+    /**
+     * Sets the rolling direction the cart rolls while being attacked. Can be 1 or -1.
+     */
+    @Override
+    public void setRollingDirection(int rollingDirection)
+    {
+        this.dataManager.set(ROLLING_DIRECTION, Integer.valueOf(rollingDirection));
+    }
+
+    /**
+     * Gets the rolling direction the cart rolls while being attacked. Can be 1 or -1.
+     */
+    @Override
+    public int getRollingDirection()
+    {
+        return ((Integer)this.dataManager.get(ROLLING_DIRECTION)).intValue();
     }
 
     @SuppressWarnings("incomplete-switch")
@@ -381,6 +480,58 @@ public class EntityDsecart extends EntityMinecart {
             }
 
             this.entityDropItem(itemstack, 0.0F);
+        }
+    }
+
+    /**
+     * Setups the entity to do the hurt animation. Only used by packets in multiplayer.
+     */
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void performHurtAnimation()
+    {
+        this.setRollingDirection(-this.getRollingDirection());
+        this.setRollingAmplitude(10);
+        this.setDamage(this.getDamage() + this.getDamage() * 10.0F);
+    }
+
+    /**
+     * (abstract) Protected helper method to read subclass entity data from NBT.
+     */
+    protected void readEntityFromNBT(NBTTagCompound compound)
+    {
+        if (compound.getBoolean("CustomDisplayTile"))
+        {
+            Block block;
+
+            if (compound.hasKey("DisplayTile", 8))
+            {
+                block = Block.getBlockFromName(compound.getString("DisplayTile"));
+            }
+            else
+            {
+                block = Block.getBlockById(compound.getInteger("DisplayTile"));
+            }
+
+            int i = compound.getInteger("DisplayData");
+            this.setDisplayTile(block == null ? Blocks.AIR.getDefaultState() : block.getStateFromMeta(i));
+            this.setDisplayTileOffset(compound.getInteger("DisplayOffset"));
+        }
+    }
+
+    /**
+     * (abstract) Protected helper method to write subclass entity data to NBT.
+     */
+    protected void writeEntityToNBT(NBTTagCompound compound)
+    {
+        if (this.hasDisplayTile())
+        {
+            compound.setBoolean("CustomDisplayTile", true);
+            IBlockState iblockstate = this.getDisplayTile();
+            ResourceLocation resourcelocation = Block.REGISTRY.getNameForObject(iblockstate.getBlock());
+            compound.setString("DisplayTile", resourcelocation == null ? "" : resourcelocation.toString());
+            compound.setInteger("DisplayData", iblockstate.getBlock().getMetaFromState(iblockstate));
+            compound.setInteger("DisplayOffset", this.getDisplayTileOffset());
         }
     }
 

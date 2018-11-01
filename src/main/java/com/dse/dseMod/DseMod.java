@@ -11,6 +11,8 @@ import com.dse.dseMod.block.BlockKidatami;
 import com.dse.dseMod.block.BlockMame;
 import com.dse.dseMod.block.BlockRailDse;
 import com.dse.dseMod.block.BlockWeatherFrog;
+import com.dse.dseMod.entity.EntityDsecart;
+import com.dse.dseMod.entity.EntityDsecartEmpty;
 import com.dse.dseMod.item.Dsecart;
 import com.dse.dseMod.item.ItemDirectionedSlab;
 import com.dse.dseMod.item.MamedolEgg;
@@ -39,6 +41,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -316,6 +319,8 @@ public class DseMod {
 	public void preInit(FMLPreInitializationEvent event) {
 		ForgeRegistries.POTIONS.register(POTIONS.hannari);
 		GameRegistry.addSmelting(ITEMS.mamedol_seeds, new ItemStack(ITEMS.mamedol_seeds_irimame), 0.1f);
+		EntityRegistry.registerModEntity(new ResourceLocation(DseMod.MODID,"Dsecart"), EntityDsecart.class, "DsecartEntity", 0, this, 250, 1, false);
+		EntityRegistry.registerModEntity(new ResourceLocation(DseMod.MODID,"DsecartEmpty"), EntityDsecartEmpty.class, "DsecarEmptytEntity", 1, this, 250, 1, false);
 		proxy.preInit(event);
 	}
 
