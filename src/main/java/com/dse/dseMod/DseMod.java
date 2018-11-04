@@ -11,6 +11,7 @@ import com.dse.dseMod.block.BlockKidatami;
 import com.dse.dseMod.block.BlockMame;
 import com.dse.dseMod.block.BlockRailDse;
 import com.dse.dseMod.block.BlockStoneBrickBlack;
+import com.dse.dseMod.block.BlockStoneBrickGray;
 import com.dse.dseMod.block.BlockWeatherFrog;
 import com.dse.dseMod.entity.EntityDsecart;
 import com.dse.dseMod.entity.EntityDsecartEmpty;
@@ -160,6 +161,7 @@ public class DseMod {
 				.setUnlocalizedName("flower_gentiana")
 				.setRegistryName("flower_gentiana");
 		public static BlockStoneBrickBlack stonebrick_black = new BlockStoneBrickBlack();
+		public static BlockStoneBrickGray stonebrick_gray = new BlockStoneBrickGray();
 		public static BlockBonbori bonbori_off = new BlockBonbori(false);
 		public static BlockBonbori bonbori_on = new BlockBonbori(true);
 		public static BlockWeatherFrog weather_frog = new BlockWeatherFrog();
@@ -189,6 +191,7 @@ public class DseMod {
 		public static Item aodatami_slab_tile_item = new ItemDirectionedSlab(BLOCKS.aodatami_slab, BLOCKS.aodatami_slab, BLOCKS.aodatami_slab_double).setRegistryName(BLOCKS.aodatami_slab.getRegistryName());
 		public static Item kidatami_slab_tile_item = new ItemDirectionedSlab(BLOCKS.kidatami_slab, BLOCKS.kidatami_slab, BLOCKS.kidatami_slab_double).setRegistryName(BLOCKS.kidatami_slab.getRegistryName());
 		public static Item stonebrick_black_tile_item = new ItemBlock(BLOCKS.stonebrick_black).setRegistryName(BLOCKS.stonebrick_black.getRegistryName());
+		public static Item stonebrick_gray_tile_item =new ItemBlock(BLOCKS.stonebrick_gray).setRegistryName(BLOCKS.stonebrick_gray.getRegistryName());
 	}
 
 	// sound event holder
@@ -287,7 +290,8 @@ public class DseMod {
 				BLOCK_ITEMS.weather_frog_tile_item,
 				BLOCK_ITEMS.aodatami_slab_tile_item,
 				BLOCK_ITEMS.kidatami_slab_tile_item,
-				BLOCK_ITEMS.stonebrick_black_tile_item
+				BLOCK_ITEMS.stonebrick_black_tile_item,
+				BLOCK_ITEMS.stonebrick_gray_tile_item
 				);
 	}
 
@@ -308,7 +312,8 @@ public class DseMod {
 				BLOCKS.aodatami_slab_double,
 				BLOCKS.kidatami_slab,
 				BLOCKS.kidatami_slab_double,
-				BLOCKS.stonebrick_black
+				BLOCKS.stonebrick_black,
+				BLOCKS.stonebrick_gray
 				);
 	}
 
