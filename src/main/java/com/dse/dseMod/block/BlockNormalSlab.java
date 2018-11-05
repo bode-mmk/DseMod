@@ -11,8 +11,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public abstract class BlockNormalSlab extends BlockSlab {
-	public BlockNormalSlab() {
-		super(Material.WOOD);
+	public BlockNormalSlab(Material type) {
+		super(type);
 		IBlockState iblockstate = this.blockState.getBaseState();
 
 		if(!this.isDouble()) {
@@ -21,6 +21,10 @@ public abstract class BlockNormalSlab extends BlockSlab {
 
 		this.setDefaultState(iblockstate);
 		this.useNeighborBrightness = !this.isDouble();
+	}
+
+	public BlockNormalSlab() {
+		this(Material.WOOD);
 	}
 
 	@Override
