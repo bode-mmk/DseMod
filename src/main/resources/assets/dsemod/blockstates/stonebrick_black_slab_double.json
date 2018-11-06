@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "dsemod:stonebrick_black_slab_double" }
+        "dummy=default": { "model": "dsemod:stonebrick_black_slab_double" }
     }
 }

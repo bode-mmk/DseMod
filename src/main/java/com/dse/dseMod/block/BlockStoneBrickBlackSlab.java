@@ -19,15 +19,15 @@ public abstract class BlockStoneBrickBlackSlab extends BlockNormalSlab {
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return DseMod.BLOCK_ITEMS.aodatami_slab_tile_item;
+        return DseMod.BLOCK_ITEMS.stonebrick_black_slab_tile_item;
     }
 
 	public static class Double extends BlockStoneBrickBlackSlab
 	{
 		public Double() {
 			super();
-			this.setUnlocalizedName("aodatami_slab_double");
-			this.setRegistryName("aodatami_slab_double");
+			this.setUnlocalizedName("stonebrick_black_slab_double");
+			this.setRegistryName("stonebrick_black_slab_double");
 		}
 
 		@Override
@@ -41,8 +41,8 @@ public abstract class BlockStoneBrickBlackSlab extends BlockNormalSlab {
 
 		public Half() {
 			super();
-			this.setUnlocalizedName("aodatami_slab");
-			this.setRegistryName("aodatami_slab");
+			this.setUnlocalizedName("stonebrick_black_slab");
+			this.setRegistryName("stonebrick_black_slab");
 		}
 
 		@Override

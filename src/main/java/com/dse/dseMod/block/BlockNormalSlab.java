@@ -3,14 +3,19 @@ package com.dse.dseMod.block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public abstract class BlockNormalSlab extends BlockSlab {
+	public static final PropertyEnum<Dummy> DUMMY = PropertyEnum.<Dummy>create("dummy",Dummy.class);
+
 	public BlockNormalSlab(Material type) {
 		super(type);
 		IBlockState iblockstate = this.blockState.getBaseState();
@@ -50,6 +55,18 @@ public abstract class BlockNormalSlab extends BlockSlab {
 	}
 
 	@Override
+	public Comparable<?> getTypeForItem(ItemStack stack) {
+		// TODO 自動生成されたメソッド・スタブ
+		return Dummy.DEFAULT;
+	}
+
+	@Override
+	public IProperty<?> getVariantProperty() {
+		// TODO 自動生成されたメソッド・スタブ
+		return DUMMY;
+	}
+
+	@Override
 	public final int getMetaFromState(final IBlockState state) {
 		int meta = 0;
 
@@ -63,9 +80,9 @@ public abstract class BlockNormalSlab extends BlockSlab {
 	@Override
 	protected BlockStateContainer createBlockState() {
 		if(!this.isDouble()){
-			return new BlockStateContainer(this, new IProperty[] {HALF});
+			return new BlockStateContainer(this, new IProperty[] {DUMMY, HALF});
 		}
-		return new BlockStateContainer(this, new IProperty[] {});
+		return new BlockStateContainer(this, new IProperty[] {DUMMY});
 	}
 
 	//@Override
@@ -80,4 +97,16 @@ public abstract class BlockNormalSlab extends BlockSlab {
 
         return state;
     }
+
+	public static enum Dummy implements IStringSerializable
+	{
+		DEFAULT;
+
+		@Override
+		public String getName() {
+			// TODO 自動生成されたメソッド・スタブ
+			return "default";
+		}
+
+	}
 }
