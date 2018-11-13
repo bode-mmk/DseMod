@@ -175,10 +175,14 @@ public class DseMod {
 		public static BlockKidatami kidatami_slab_double = new BlockKidatami.Double();
 		public static BlockStoneBrickBlackSlab stonebrick_black_slab = new BlockStoneBrickBlackSlab.Half();
 		public static BlockStoneBrickBlackSlab stonebrick_black_slab_double = new BlockStoneBrickBlackSlab.Double();
-		public static Block stonebrick_black_stairs = new BlockNormalStairs(stonebrick_black.getDefaultState()).setRegistryName("stonebrick_black_stairs");
+		public static Block stonebrick_black_stairs = new BlockNormalStairs(stonebrick_black.getDefaultState())
+				.setUnlocalizedName("stonebrick_black_stairs")
+				.setRegistryName("stonebrick_black_stairs");
 		public static BlockStoneBrickGraySlab stonebrick_gray_slab = new BlockStoneBrickGraySlab.Half();
 		public static BlockStoneBrickGraySlab stonebrick_gray_slab_double = new BlockStoneBrickGraySlab.Double();
-		public static Block stonebrick_gray_stairs = new BlockNormalStairs(stonebrick_gray.getDefaultState()).setRegistryName("stonebrick_gray_stairs");
+		public static Block stonebrick_gray_stairs = new BlockNormalStairs(stonebrick_gray.getDefaultState())
+				.setUnlocalizedName("stonebrick_gray_stairs")
+				.setRegistryName("stonebrick_gray_stairs");
 	}
 
 	public static class BLOCK_ITEMS{
