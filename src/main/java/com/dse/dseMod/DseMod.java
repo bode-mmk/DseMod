@@ -9,6 +9,7 @@ import com.dse.dseMod.block.BlockFlowerLycoris;
 import com.dse.dseMod.block.BlockFlowerMyosotis;
 import com.dse.dseMod.block.BlockKidatami;
 import com.dse.dseMod.block.BlockMame;
+import com.dse.dseMod.block.BlockNormalStairs;
 import com.dse.dseMod.block.BlockRailDse;
 import com.dse.dseMod.block.BlockStoneBrickBlack;
 import com.dse.dseMod.block.BlockStoneBrickBlackSlab;
@@ -173,6 +174,7 @@ public class DseMod {
 		public static BlockKidatami kidatami_slab_double = new BlockKidatami.Double();
 		public static BlockStoneBrickBlackSlab stonebrick_black_slab = new BlockStoneBrickBlackSlab.Half();
 		public static BlockStoneBrickBlackSlab stonebrick_black_slab_double = new BlockStoneBrickBlackSlab.Double();
+		public static Block stonebrick_black_stairs = new BlockNormalStairs(stonebrick_black.getDefaultState()).setRegistryName("stonebrick_black_stairs");
 	}
 
 	public static class BLOCK_ITEMS{
@@ -196,6 +198,7 @@ public class DseMod {
 		public static Item kidatami_slab_tile_item = new ItemDirectionedSlab(BLOCKS.kidatami_slab, BLOCKS.kidatami_slab, BLOCKS.kidatami_slab_double).setRegistryName(BLOCKS.kidatami_slab.getRegistryName());
 		public static Item stonebrick_black_slab_tile_item = new ItemNormalSlab(BLOCKS.stonebrick_black_slab, BLOCKS.stonebrick_black_slab, BLOCKS.stonebrick_black_slab_double).setRegistryName(BLOCKS.stonebrick_black_slab.getRegistryName());
 		public static Item stonebrick_black_tile_item = new ItemBlock(BLOCKS.stonebrick_black).setRegistryName(BLOCKS.stonebrick_black.getRegistryName());
+		public static Item stonebrick_black_stairs_tile_item = new ItemBlock(BLOCKS.stonebrick_black_stairs).setRegistryName(BLOCKS.stonebrick_black_stairs.getRegistryName());
 		public static Item stonebrick_gray_tile_item =new ItemBlock(BLOCKS.stonebrick_gray).setRegistryName(BLOCKS.stonebrick_gray.getRegistryName());
 	}
 
@@ -297,7 +300,8 @@ public class DseMod {
 				BLOCK_ITEMS.kidatami_slab_tile_item,
 				BLOCK_ITEMS.stonebrick_black_tile_item,
 				BLOCK_ITEMS.stonebrick_gray_tile_item,
-				BLOCK_ITEMS.stonebrick_black_slab_tile_item
+				BLOCK_ITEMS.stonebrick_black_slab_tile_item,
+				BLOCK_ITEMS.stonebrick_black_stairs_tile_item
 				);
 	}
 
@@ -321,6 +325,7 @@ public class DseMod {
 				BLOCKS.stonebrick_black,
 				BLOCKS.stonebrick_black_slab,
 				BLOCKS.stonebrick_black_slab_double,
+				BLOCKS.stonebrick_black_stairs,
 				BLOCKS.stonebrick_gray
 				);
 	}

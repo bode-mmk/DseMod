@@ -104,6 +104,7 @@ public class ClientProxy extends CommonProxy {
 		setBlockResource(Item.getItemFromBlock(DseMod.BLOCKS.kidatami_slab));
 		setBlockResource(Item.getItemFromBlock(DseMod.BLOCKS.stonebrick_black));
 		setBlockResource(Item.getItemFromBlock(DseMod.BLOCKS.stonebrick_black_slab));
+		setBlockResource(Item.getItemFromBlock(DseMod.BLOCKS.stonebrick_black_stairs));
 		setBlockResource(Item.getItemFromBlock(DseMod.BLOCKS.stonebrick_gray));
     }
 }
