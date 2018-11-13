@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "dummy=default": { "model": "dsemod:stonebrick_gray_slab_double" }
+    }
+}
