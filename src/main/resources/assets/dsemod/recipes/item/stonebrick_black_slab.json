@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "dsemod:stonebrick_black"
+    }
+  },
+  "result": {
+    "item": "dsemod:stonebrick_black_slab",
+    "data": 0,
+    "count": 6
+  }
+}

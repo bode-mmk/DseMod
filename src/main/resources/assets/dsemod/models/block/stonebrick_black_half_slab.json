@@ -1,0 +1,8 @@
+{
+    "parent": "block/half_slab",
+    "textures": {
+        "bottom": "dsemod:blocks/stonebrick_black",
+        "top": "dsemod:blocks/stonebrick_black",
+        "side": "dsemod:blocks/stonebrick_black"
+    }
+}

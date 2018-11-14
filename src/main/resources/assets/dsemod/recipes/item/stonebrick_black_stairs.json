@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"S  ",
+    "SS ",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "dsemod:stonebrick_black"
+    }
+  },
+  "result": {
+    "item": "dsemod:stonebrick_black_stairs",
+    "count": 6
+  }
+}

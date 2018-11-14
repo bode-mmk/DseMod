@@ -1,0 +1,8 @@
+{
+    "parent": "block/upper_slab",
+    "textures": {
+        "bottom": "dsemod:blocks/stonebrick_gray",
+        "top": "dsemod:blocks/stonebrick_gray",
+        "side": "dsemod:blocks/stonebrick_gray"
+    }
+}

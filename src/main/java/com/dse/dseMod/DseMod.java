@@ -9,12 +9,18 @@ import com.dse.dseMod.block.BlockFlowerLycoris;
 import com.dse.dseMod.block.BlockFlowerMyosotis;
 import com.dse.dseMod.block.BlockKidatami;
 import com.dse.dseMod.block.BlockMame;
+import com.dse.dseMod.block.BlockNormalStairs;
 import com.dse.dseMod.block.BlockRailDse;
+import com.dse.dseMod.block.BlockStoneBrickBlack;
+import com.dse.dseMod.block.BlockStoneBrickBlackSlab;
+import com.dse.dseMod.block.BlockStoneBrickGray;
+import com.dse.dseMod.block.BlockStoneBrickGraySlab;
 import com.dse.dseMod.block.BlockWeatherFrog;
 import com.dse.dseMod.entity.EntityDsecart;
 import com.dse.dseMod.entity.EntityDsecartEmpty;
 import com.dse.dseMod.item.Dsecart;
 import com.dse.dseMod.item.ItemDirectionedSlab;
+import com.dse.dseMod.item.ItemNormalSlab;
 import com.dse.dseMod.item.MamedolEgg;
 import com.dse.dseMod.item.MamedolSeeds;
 import com.dse.dseMod.item.MamedolSeedsIrimame;
@@ -158,6 +164,8 @@ public class DseMod {
 				.setCreativeTab(CreativeTabs.DECORATIONS)
 				.setUnlocalizedName("flower_gentiana")
 				.setRegistryName("flower_gentiana");
+		public static BlockStoneBrickBlack stonebrick_black = new BlockStoneBrickBlack();
+		public static BlockStoneBrickGray stonebrick_gray = new BlockStoneBrickGray();
 		public static BlockBonbori bonbori_off = new BlockBonbori(false);
 		public static BlockBonbori bonbori_on = new BlockBonbori(true);
 		public static BlockWeatherFrog weather_frog = new BlockWeatherFrog();
@@ -165,6 +173,16 @@ public class DseMod {
 		public static BlockAodatami aodatami_slab_double = new BlockAodatami.Double();
 		public static BlockKidatami kidatami_slab = new BlockKidatami.Half();
 		public static BlockKidatami kidatami_slab_double = new BlockKidatami.Double();
+		public static BlockStoneBrickBlackSlab stonebrick_black_slab = new BlockStoneBrickBlackSlab.Half();
+		public static BlockStoneBrickBlackSlab stonebrick_black_slab_double = new BlockStoneBrickBlackSlab.Double();
+		public static Block stonebrick_black_stairs = new BlockNormalStairs(stonebrick_black.getDefaultState())
+				.setUnlocalizedName("stonebrick_black_stairs")
+				.setRegistryName("stonebrick_black_stairs");
+		public static BlockStoneBrickGraySlab stonebrick_gray_slab = new BlockStoneBrickGraySlab.Half();
+		public static BlockStoneBrickGraySlab stonebrick_gray_slab_double = new BlockStoneBrickGraySlab.Double();
+		public static Block stonebrick_gray_stairs = new BlockNormalStairs(stonebrick_gray.getDefaultState())
+				.setUnlocalizedName("stonebrick_gray_stairs")
+				.setRegistryName("stonebrick_gray_stairs");
 	}
 
 	public static class BLOCK_ITEMS{
@@ -186,6 +204,12 @@ public class DseMod {
 				.setRegistryName(BLOCKS.weather_frog.getRegistryName());
 		public static Item aodatami_slab_tile_item = new ItemDirectionedSlab(BLOCKS.aodatami_slab, BLOCKS.aodatami_slab, BLOCKS.aodatami_slab_double).setRegistryName(BLOCKS.aodatami_slab.getRegistryName());
 		public static Item kidatami_slab_tile_item = new ItemDirectionedSlab(BLOCKS.kidatami_slab, BLOCKS.kidatami_slab, BLOCKS.kidatami_slab_double).setRegistryName(BLOCKS.kidatami_slab.getRegistryName());
+		public static Item stonebrick_black_slab_tile_item = new ItemNormalSlab(BLOCKS.stonebrick_black_slab, BLOCKS.stonebrick_black_slab, BLOCKS.stonebrick_black_slab_double).setRegistryName(BLOCKS.stonebrick_black_slab.getRegistryName());
+		public static Item stonebrick_black_tile_item = new ItemBlock(BLOCKS.stonebrick_black).setRegistryName(BLOCKS.stonebrick_black.getRegistryName());
+		public static Item stonebrick_black_stairs_tile_item = new ItemBlock(BLOCKS.stonebrick_black_stairs).setRegistryName(BLOCKS.stonebrick_black_stairs.getRegistryName());
+		public static Item stonebrick_gray_tile_item =new ItemBlock(BLOCKS.stonebrick_gray).setRegistryName(BLOCKS.stonebrick_gray.getRegistryName());
+		public static Item stonebrick_gray_slab_tile_item = new ItemNormalSlab(BLOCKS.stonebrick_gray_slab, BLOCKS.stonebrick_gray_slab, BLOCKS.stonebrick_gray_slab_double).setRegistryName(BLOCKS.stonebrick_gray_slab.getRegistryName());
+		public static Item stonebrick_gray_stairs_tile_item = new ItemBlock(BLOCKS.stonebrick_gray_stairs).setRegistryName(BLOCKS.stonebrick_gray_stairs.getRegistryName());
 	}
 
 	// sound event holder
@@ -283,7 +307,13 @@ public class DseMod {
 				BLOCK_ITEMS.bonbori_tile_item,
 				BLOCK_ITEMS.weather_frog_tile_item,
 				BLOCK_ITEMS.aodatami_slab_tile_item,
-				BLOCK_ITEMS.kidatami_slab_tile_item
+				BLOCK_ITEMS.kidatami_slab_tile_item,
+				BLOCK_ITEMS.stonebrick_black_tile_item,
+				BLOCK_ITEMS.stonebrick_gray_tile_item,
+				BLOCK_ITEMS.stonebrick_black_slab_tile_item,
+				BLOCK_ITEMS.stonebrick_black_stairs_tile_item,
+				BLOCK_ITEMS.stonebrick_gray_slab_tile_item,
+				BLOCK_ITEMS.stonebrick_gray_stairs_tile_item
 				);
 	}
 
@@ -303,7 +333,15 @@ public class DseMod {
 				BLOCKS.aodatami_slab,
 				BLOCKS.aodatami_slab_double,
 				BLOCKS.kidatami_slab,
-				BLOCKS.kidatami_slab_double
+				BLOCKS.kidatami_slab_double,
+				BLOCKS.stonebrick_black,
+				BLOCKS.stonebrick_black_slab,
+				BLOCKS.stonebrick_black_slab_double,
+				BLOCKS.stonebrick_black_stairs,
+				BLOCKS.stonebrick_gray,
+				BLOCKS.stonebrick_gray_slab,
+				BLOCKS.stonebrick_gray_slab_double,
+				BLOCKS.stonebrick_gray_stairs
 				);
 	}
 

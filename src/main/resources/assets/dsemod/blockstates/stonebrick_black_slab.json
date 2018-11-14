@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "dummy=default,half=bottom": { "model": "dsemod:stonebrick_black_half_slab" },
+        "dummy=default,half=top": { "model": "dsemod:stonebrick_black_upper_slab" },
+        "dummy=default,half=bottom": { "model": "dsemod:stonebrick_black_half_slab" },
+        "dummy=default,half=top": { "model": "dsemod:stonebrick_black_upper_slab" }
+    }
+}
