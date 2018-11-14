@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+  	"SSS",
+    "SGS",
+    "SSS"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:dye",
+      "data": 8
+    },
+    "S": {
+      "item": "minecraft:stonebrick",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "dsemod:stonebrick_gray",
+    "count": 8
+  }
+}
