@@ -1,0 +1,37 @@
+{
+    "parent": "block/block",
+    "credit": "Made with Blockbench",
+    "textures": {
+        "0": "dsemod:blocks/kokeshi_rinze_head",
+        "1": "dsemod:blocks/kokeshi_rinze_body",
+        "particle": "dsemod:blocks/kokeshi_rinze_head"
+    },
+    "elements": [
+        {
+            "name": "head",
+            "from": [5.2, 4.1, 5.2],
+            "to": [10.8, 9.7, 10.8],
+            "faces": {
+                "north": {"uv": [0, 0, 8, 8], "texture": "#0"},
+                "east": {"uv": [0, 8, 8, 16], "texture": "#0"},
+                "south": {"uv": [8, 0, 16, 8], "texture": "#0"},
+                "west": {"uv": [8, 8, 16, 16], "texture": "#0"},
+                "up": {"uv": [0, 0, 8, 8], "texture": "#1"},
+                "down": {"uv": [8, 0, 16, 8], "texture": "#1"}
+            }
+        },
+        {
+            "name": "body",
+            "from": [6.6, -0.1, 6.6],
+            "to": [9.4, 4.1, 9.4],
+            "faces": {
+                "north": {"uv": [0, 8, 4, 14], "texture": "#1"},
+                "east": {"uv": [12, 8, 16, 14], "texture": "#1"},
+                "south": {"uv": [8, 8, 12, 14], "texture": "#1"},
+                "west": {"uv": [4, 8, 8, 14], "texture": "#1"},
+                "up": {"uv": [10, 2, 14, 6], "texture": "#1"},
+                "down": {"uv": [6, 12, 10, 16], "texture": "#1"}
+            }
+        }
+    ]
+}
