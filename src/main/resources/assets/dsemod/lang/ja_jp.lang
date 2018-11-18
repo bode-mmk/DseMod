@@ -70,3 +70,6 @@ tile.stonebrick_black_stairs.name=黒レンガ階段ブロック
 tile.stonebrick_gray.name=灰色レンガブロック
 tile.stonebrick_gray_slab.name=灰色レンガハーフブロック
 tile.stonebrick_gray_stairs.name=灰色レンガ階段ブロック
+
+tile.kokeshi_rinze.name=こけしりんぜ
+tile.kokeshi_sae.name=こけしおさえ

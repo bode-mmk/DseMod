@@ -8,6 +8,8 @@ import com.dse.dseMod.block.BlockFlowerGentiana;
 import com.dse.dseMod.block.BlockFlowerLycoris;
 import com.dse.dseMod.block.BlockFlowerMyosotis;
 import com.dse.dseMod.block.BlockKidatami;
+import com.dse.dseMod.block.BlockKokeshiRinze;
+import com.dse.dseMod.block.BlockKokeshiSae;
 import com.dse.dseMod.block.BlockMame;
 import com.dse.dseMod.block.BlockNormalStairs;
 import com.dse.dseMod.block.BlockRailDse;
@@ -55,7 +57,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @EventBusSubscriber
 public class DseMod {
 	public static final String  MODID = "dsemod";
-	public static final String  VERSION = "0.2.1.0";
+	public static final String  VERSION = "0.2.1.1";
 	// world generator holder
 	//public static class WORLD_GEN {
 	//	public static IWorldGenerator dse_flower_generator = new com.dse.dseMod.worldgen.WorldGenDseFlower();
@@ -183,6 +185,8 @@ public class DseMod {
 		public static Block stonebrick_gray_stairs = new BlockNormalStairs(stonebrick_gray.getDefaultState())
 				.setUnlocalizedName("stonebrick_gray_stairs")
 				.setRegistryName("stonebrick_gray_stairs");
+		public static BlockKokeshiRinze kokeshi_rinze = new BlockKokeshiRinze();
+		public static BlockKokeshiSae kokeshi_sae = new BlockKokeshiSae();
 	}
 
 	public static class BLOCK_ITEMS{
@@ -210,6 +214,10 @@ public class DseMod {
 		public static Item stonebrick_gray_tile_item =new ItemBlock(BLOCKS.stonebrick_gray).setRegistryName(BLOCKS.stonebrick_gray.getRegistryName());
 		public static Item stonebrick_gray_slab_tile_item = new ItemNormalSlab(BLOCKS.stonebrick_gray_slab, BLOCKS.stonebrick_gray_slab, BLOCKS.stonebrick_gray_slab_double).setRegistryName(BLOCKS.stonebrick_gray_slab.getRegistryName());
 		public static Item stonebrick_gray_stairs_tile_item = new ItemBlock(BLOCKS.stonebrick_gray_stairs).setRegistryName(BLOCKS.stonebrick_gray_stairs.getRegistryName());
+		public static Item kokeshi_rinze_tile_item = new ItemBlock(BLOCKS.kokeshi_rinze)
+				.setRegistryName(BLOCKS.kokeshi_rinze.getRegistryName());
+		public static Item kokeshi_sae_tile_item = new ItemBlock(BLOCKS.kokeshi_sae)
+				.setRegistryName(BLOCKS.kokeshi_sae.getRegistryName());
 	}
 
 	// sound event holder
@@ -313,7 +321,9 @@ public class DseMod {
 				BLOCK_ITEMS.stonebrick_black_slab_tile_item,
 				BLOCK_ITEMS.stonebrick_black_stairs_tile_item,
 				BLOCK_ITEMS.stonebrick_gray_slab_tile_item,
-				BLOCK_ITEMS.stonebrick_gray_stairs_tile_item
+				BLOCK_ITEMS.stonebrick_gray_stairs_tile_item,
+				BLOCK_ITEMS.kokeshi_rinze_tile_item,
+				BLOCK_ITEMS.kokeshi_sae_tile_item
 				);
 	}
 
@@ -341,7 +351,9 @@ public class DseMod {
 				BLOCKS.stonebrick_gray,
 				BLOCKS.stonebrick_gray_slab,
 				BLOCKS.stonebrick_gray_slab_double,
-				BLOCKS.stonebrick_gray_stairs
+				BLOCKS.stonebrick_gray_stairs,
+				BLOCKS.kokeshi_rinze,
+				BLOCKS.kokeshi_sae
 				);
 	}
 
