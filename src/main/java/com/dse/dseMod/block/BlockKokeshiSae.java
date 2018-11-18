@@ -14,18 +14,18 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockKokeshiRinze extends BlockDirectionedBlock {
+public class BlockKokeshiSae extends BlockDirectionedBlock {
 	public static final AxisAlignedBB KOKESHI_AABB = new AxisAlignedBB(0.3D, 0.0D, 0.3D, 0.7D, 0.62D, 0.7D);
 
-	public BlockKokeshiRinze(Material materialIn) {
+	public BlockKokeshiSae(Material materialIn) {
 		super(materialIn);
 		this.setCreativeTab(CreativeTabs.DECORATIONS);
-		this.setRegistryName("kokeshi_rinze");
-		this.setUnlocalizedName("kokeshi_rinze");
+		this.setRegistryName("kokeshi_sae");
+		this.setUnlocalizedName("kokeshi_sae");
 		this.setHardness(0.1f);
 	}
 
-	public BlockKokeshiRinze() {
+	public BlockKokeshiSae() {
 		this(Material.WOOD);
 	}
 
@@ -58,6 +58,7 @@ public class BlockKokeshiRinze extends BlockDirectionedBlock {
 
 	@Override
 	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, net.minecraft.world.IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-		drops.add(new ItemStack(DseMod.BLOCK_ITEMS.kokeshi_rinze_tile_item, 1, 0));
+		drops.add(new ItemStack(DseMod.BLOCK_ITEMS.kokeshi_sae_tile_item, 1, 0));
 	}
+
 }
