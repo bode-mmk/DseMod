@@ -11,6 +11,7 @@ import com.dse.dseMod.block.BlockKidatami;
 import com.dse.dseMod.block.BlockKokeshiEmily;
 import com.dse.dseMod.block.BlockKokeshiRinze;
 import com.dse.dseMod.block.BlockKokeshiSae;
+import com.dse.dseMod.block.BlockKokeshiTsumugi;
 import com.dse.dseMod.block.BlockKokeshiYoshino;
 import com.dse.dseMod.block.BlockMame;
 import com.dse.dseMod.block.BlockNormalStairs;
@@ -191,6 +192,7 @@ public class DseMod {
 		public static BlockKokeshiSae kokeshi_sae = new BlockKokeshiSae();
 		public static BlockKokeshiEmily kokeshi_emily = new BlockKokeshiEmily();
 		public static BlockKokeshiYoshino kokeshi_yoshino = new BlockKokeshiYoshino();
+		public static BlockKokeshiTsumugi kokeshi_tsumugi = new BlockKokeshiTsumugi();
 	}
 
 	public static class BLOCK_ITEMS{
@@ -226,6 +228,8 @@ public class DseMod {
 				.setRegistryName(BLOCKS.kokeshi_emily.getRegistryName());
 		public static Item kokeshi_yoshino_tile_item = new ItemBlock(BLOCKS.kokeshi_yoshino)
 				.setRegistryName(BLOCKS.kokeshi_yoshino.getRegistryName());
+		public static Item kokeshi_tsumugi_tile_item = new ItemBlock(BLOCKS.kokeshi_tsumugi)
+				.setRegistryName(BLOCKS.kokeshi_tsumugi.getRegistryName());
 	}
 
 	// sound event holder
@@ -333,7 +337,8 @@ public class DseMod {
 				BLOCK_ITEMS.kokeshi_rinze_tile_item,
 				BLOCK_ITEMS.kokeshi_sae_tile_item,
 				BLOCK_ITEMS.kokeshi_emily_tile_item,
-				BLOCK_ITEMS.kokeshi_yoshino_tile_item
+				BLOCK_ITEMS.kokeshi_yoshino_tile_item,
+				BLOCK_ITEMS.kokeshi_tsumugi_tile_item
 				);
 	}
 
@@ -365,7 +370,8 @@ public class DseMod {
 				BLOCKS.kokeshi_rinze,
 				BLOCKS.kokeshi_sae,
 				BLOCKS.kokeshi_emily,
-				BLOCKS.kokeshi_yoshino
+				BLOCKS.kokeshi_yoshino,
+				BLOCKS.kokeshi_tsumugi
 				);
 	}
 

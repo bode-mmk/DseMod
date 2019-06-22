@@ -1,0 +1,64 @@
+{
+    "parent": "block/block",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "dsemod:blocks/kokeshi_tsumugi_head",
+		"1": "dsemod:blocks/kokeshi_tsumugi_body",
+		"2": "dsemod:blocks/kokeshi_tsumugi_tail",
+		"particle": "dsemod:blocks/kokeshi_tsumugi_body"
+	},
+	"elements": [
+		{
+			"name": "Body",
+			"from": [6.6, -0.1, 6.6],
+			"to": [9.4, 4.1, 9.4],
+			"faces": {
+				"north": {"uv": [0, 8, 4, 14], "texture": "#1"},
+				"east": {"uv": [12, 8, 16, 14], "texture": "#1"},
+				"south": {"uv": [8, 8, 12, 14], "texture": "#1"},
+				"west": {"uv": [4, 8, 8, 14], "texture": "#1"},
+				"up": {"uv": [0, 14, 4, 16], "texture": "#1"},
+				"down": {"uv": [4, 14, 8, 16], "texture": "#1"}
+			}
+		},
+		{
+			"name": "Head",
+			"from": [5.2, 4.1, 5.2],
+			"to": [10.8, 9.7, 10.8],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 8], "texture": "#0"},
+				"east": {"uv": [0, 8, 8, 16], "texture": "#0"},
+				"south": {"uv": [8, 0, 16, 8], "texture": "#0"},
+				"west": {"uv": [8, 8, 16, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 8, 8], "texture": "#1"},
+				"down": {"uv": [8, 0, 16, 8], "texture": "#1"}
+			}
+		},
+		{
+			"name": "Hair",
+			"from": [5.2, 1.3, 10.1],
+			"to": [10.8, 4.1, 10.8],
+			"faces": {
+				"north": {"uv": [8, 0, 16, 4], "texture": "#2"},
+				"east": {"uv": [0, 0, 1, 4], "texture": "#2"},
+				"south": {"uv": [0, 0, 8, 4], "texture": "#2"},
+				"west": {"uv": [0, 0, 1, 4], "texture": "#2"},
+				"up": {"uv": [0, 0, 8, 1], "texture": "#2"},
+				"down": {"uv": [0, 0, 8, 1], "texture": "#2"}
+			}
+		},
+		{
+			"name": "Hair_sub",
+			"from": [7.3, 0.6, 10.1],
+			"to": [8.7, 1.3, 10.8],
+			"faces": {
+				"north": {"uv": [11, 0, 13, 1], "texture": "#2"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#2"},
+				"south": {"uv": [0, 0, 2, 1], "texture": "#2"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#2"},
+				"up": {"uv": [0, 0, 2, 1], "texture": "#2"},
+				"down": {"uv": [0, 0, 2, 1], "texture": "#2"}
+			}
+		}
+	]
+}
