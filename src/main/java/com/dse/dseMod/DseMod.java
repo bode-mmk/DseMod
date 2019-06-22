@@ -26,6 +26,7 @@ import com.dse.dseMod.entity.EntityDsecart;
 import com.dse.dseMod.entity.EntityDsecartEmpty;
 import com.dse.dseMod.item.Dsecart;
 import com.dse.dseMod.item.ItemDirectionedSlab;
+import com.dse.dseMod.item.ItemKokeshi;
 import com.dse.dseMod.item.ItemNormalSlab;
 import com.dse.dseMod.item.MamedolEgg;
 import com.dse.dseMod.item.MamedolSeeds;
@@ -222,17 +223,17 @@ public class DseMod {
 		public static Item stonebrick_gray_tile_item =new ItemBlock(BLOCKS.stonebrick_gray).setRegistryName(BLOCKS.stonebrick_gray.getRegistryName());
 		public static Item stonebrick_gray_slab_tile_item = new ItemNormalSlab(BLOCKS.stonebrick_gray_slab, BLOCKS.stonebrick_gray_slab, BLOCKS.stonebrick_gray_slab_double).setRegistryName(BLOCKS.stonebrick_gray_slab.getRegistryName());
 		public static Item stonebrick_gray_stairs_tile_item = new ItemBlock(BLOCKS.stonebrick_gray_stairs).setRegistryName(BLOCKS.stonebrick_gray_stairs.getRegistryName());
-		public static Item kokeshi_rinze_tile_item = new ItemBlock(BLOCKS.kokeshi_rinze)
+		public static Item kokeshi_rinze_tile_item = new ItemKokeshi(BLOCKS.kokeshi_rinze)
 				.setRegistryName(BLOCKS.kokeshi_rinze.getRegistryName());
-		public static Item kokeshi_sae_tile_item = new ItemBlock(BLOCKS.kokeshi_sae)
+		public static Item kokeshi_sae_tile_item = new ItemKokeshi(BLOCKS.kokeshi_sae)
 				.setRegistryName(BLOCKS.kokeshi_sae.getRegistryName());
-		public static Item kokeshi_emily_tile_item = new ItemBlock(BLOCKS.kokeshi_emily)
+		public static Item kokeshi_emily_tile_item = new ItemKokeshi(BLOCKS.kokeshi_emily)
 				.setRegistryName(BLOCKS.kokeshi_emily.getRegistryName());
-		public static Item kokeshi_yoshino_tile_item = new ItemBlock(BLOCKS.kokeshi_yoshino)
+		public static Item kokeshi_yoshino_tile_item = new ItemKokeshi(BLOCKS.kokeshi_yoshino)
 				.setRegistryName(BLOCKS.kokeshi_yoshino.getRegistryName());
-		public static Item kokeshi_tsumugi_tile_item = new ItemBlock(BLOCKS.kokeshi_tsumugi)
+		public static Item kokeshi_tsumugi_tile_item = new ItemKokeshi(BLOCKS.kokeshi_tsumugi)
 				.setRegistryName(BLOCKS.kokeshi_tsumugi.getRegistryName());
-		public static Item kokeshi_yukiho_tile_item = new ItemBlock(BLOCKS.kokeshi_yukiho)
+		public static Item kokeshi_yukiho_tile_item = new ItemKokeshi(BLOCKS.kokeshi_yukiho)
 				.setRegistryName(BLOCKS.kokeshi_yukiho.getRegistryName());
 	}
 
