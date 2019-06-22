@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "direction=north": { "model": "dsemod:kokeshi_yukiho" },
+        "direction=south": { "model": "dsemod:kokeshi_yukiho", "y" : 180 },
+        "direction=west": { "model": "dsemod:kokeshi_yukiho",  "y" : 270},
+        "direction=east": { "model": "dsemod:kokeshi_yukiho",  "y" : 90 }
+    }
+}
