@@ -14,18 +14,18 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockKokeshiEmily extends BlockDirectionedBlock {
+public class BlockKokeshiYoshino extends BlockDirectionedBlock {
 	public static final AxisAlignedBB KOKESHI_AABB = new AxisAlignedBB(0.3D, 0.0D, 0.3D, 0.7D, 0.62D, 0.7D);
 
-	public BlockKokeshiEmily(Material materialIn) {
+	public BlockKokeshiYoshino(Material materialIn) {
 		super(materialIn);
 		this.setCreativeTab(CreativeTabs.DECORATIONS);
-		this.setRegistryName("kokeshi_emily");
-		this.setUnlocalizedName("kokeshi_emily");
+		this.setRegistryName("kokeshi_yoshino");
+		this.setUnlocalizedName("kokeshi_yoshino");
 		this.setHardness(0.1f);
 	}
 
-	public BlockKokeshiEmily() {
+	public BlockKokeshiYoshino() {
 		this(Material.WOOD);
 	}
 
@@ -58,7 +58,7 @@ public class BlockKokeshiEmily extends BlockDirectionedBlock {
 
 	@Override
 	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, net.minecraft.world.IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-		drops.add(new ItemStack(DseMod.BLOCK_ITEMS.kokeshi_emily_tile_item, 1, 0));
+		drops.add(new ItemStack(DseMod.BLOCK_ITEMS.kokeshi_yoshino_tile_item, 1, 0));
 	}
 
 }
