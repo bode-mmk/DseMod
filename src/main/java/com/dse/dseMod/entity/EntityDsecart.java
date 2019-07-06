@@ -439,7 +439,7 @@ public class EntityDsecart extends EntityMinecart {
             {
                 this.setRollingDirection(-this.getRollingDirection());
                 this.setRollingAmplitude(10);
-                this.setBeenAttacked();
+                // this.setBeenAttacked();
                 this.setDamage(this.getDamage() + amount * 10.0F);
                 boolean flag = source.getTrueSource() instanceof EntityPlayer && ((EntityPlayer)source.getTrueSource()).capabilities.isCreativeMode;
 
