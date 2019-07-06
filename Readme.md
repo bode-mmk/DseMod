@@ -1,5 +1,5 @@
 ### これは何
-- Minecraft 1.12.2 + forge-1.12.2-14.23.0.2491の環境で動くmodです
+- Minecraft 1.12.2 + forge-1.12.2-14.23.5.2768の環境で動くmodです
 - [アナゴPさん](https://twitter.com/anagoP_ims)のまめドルたちを追加します
 - [もりりん](https://twitter.com/mementomori72)さんのGBアレンジを収録したレコードを追加します
 
