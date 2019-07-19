@@ -24,6 +24,7 @@ import com.dse.dseMod.block.BlockStoneBrickGraySlab;
 import com.dse.dseMod.block.BlockWeatherFrog;
 import com.dse.dseMod.entity.EntityDsecart;
 import com.dse.dseMod.entity.EntityDsecartEmpty;
+import com.dse.dseMod.event.LootHandler;
 import com.dse.dseMod.item.Dsecart;
 import com.dse.dseMod.item.ItemDirectionedSlab;
 import com.dse.dseMod.item.ItemKokeshi;
@@ -51,6 +52,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -396,7 +398,13 @@ public class DseMod {
 		GameRegistry.addSmelting(ITEMS.mamedol_seeds, new ItemStack(ITEMS.mamedol_seeds_irimame), 0.1f);
 		EntityRegistry.registerModEntity(new ResourceLocation(DseMod.MODID,"Dsecart"), EntityDsecart.class, "DsecartEntity", 0, this, 250, 1, false);
 		EntityRegistry.registerModEntity(new ResourceLocation(DseMod.MODID,"DsecartEmpty"), EntityDsecartEmpty.class, "DsecarEmptytEntity", 1, this, 250, 1, false);
+
 		proxy.preInit(event);
+	}
+
+	@Mod.EventHandler
+	public void init(FMLInitializationEvent event) {
+		MinecraftForge.EVENT_BUS.register(new LootHandler());
 	}
 
 	@Mod.EventHandler
